@@ -1,0 +1,174 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i.icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+i.icon svg {
+    fill: currentColor;
+}
+i.icon.landscape svg {
+    width: 100%;
+}
+i.icon.portrait svg {
+    height: 100%;
+}
+
+button {
+    padding: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: dodgerblue;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+button.idle :is(.loading, .done) {
+    display: none;
+}
+button.loading :is(.idle, .done) {
+    display: none;
+}
+button.done :is(.idle, .loading) {
+    display: none;
+}
+
+button:not(.done) .icons .check {
+    opacity: 0;
+}
+
+button.loading .arrow {
+    animation: bounce 2s linear infinite;
+}
+button.loading .cloud {
+    animation: fall 1s linear infinite;
+}
+
+button.done .icons .cloud {
+    opacity: 0;
+}
+button.done .icons .circle {
+    transform: translate(-50%, -50%);
+}
+button.done .icons .arrow {
+    opacity: 0;
+}
+
+button .icons {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+button .icons .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+}
+button .icons .cloud {
+    opacity: 0.2;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+}
+button .icons .cloud.c2 {
+    top: -40px;
+    left: 100%;
+    animation-delay: 0.2s;
+    animation-duration: 1.2s;
+}
+button .icons .cloud.c3 {
+    top: -80px;
+    left: 0;
+    animation-delay: 0.4s;
+    animation-duration: 1.6s;
+}
+button .icons .arrow {
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, 0);
+    transition: opacity 0.3s ease-in-out;
+}
+button .icons .check {
+    width: 18px;
+    height: 18px;
+    transition: opacity 0.3s ease-in-out;
+}
+button .icons .circle {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background: white;
+    opacity: .2;
+    transform: translate(-50%, -100px);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    25% {
+        transform: translate(-50%, 3px);
+    }
+    75% {
+        transform: translate(-50%, -3px);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes fall {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, 500%);
+    }
+    50.00000001% {
+        transform: translate(-50%, -250%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes out {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, 500%);
+    }
+    50.00000001% {
+        transform: translate(-50%, -250%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
