@@ -54,7 +54,7 @@ h6 {
     display: grid;
     width: 95%;
     margin: 40px auto;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 0px;
     justify-items: start;
     border: 1px solid #bbb;
@@ -63,7 +63,7 @@ h6 {
 }
 
 
-/**----------------------For All Day------------**/
+/**----------------------For All Days------------**/
 
 .day {
     display: flex;
@@ -75,7 +75,7 @@ h6 {
 }
 
 
-/**-----------DAY ONE(took 6 days straight): 6h--------**/
+/**-----------DAY ONE--------------------------**/
 
 .btn1 {
     display: flex;
@@ -144,7 +144,6 @@ h6 {
 .btn1 .loadingIcons .arrow {
     left: 20px;
     top: 10px;
-    /* opacity: 1; */
 }
 
 .btn1.loading .loadingIcons .arrow {
@@ -248,7 +247,7 @@ h6 {
 }
 
 
-/**-----------DAY TWO(2 days): 1.30'--------**/
+/**-----------DAY TWO--------------------------**/
 
 .dayTwo {
     /* grid-area: 1/2/2/5; */
@@ -274,7 +273,7 @@ h6 {
 }
 
 
-/**-----------DAY THREE(2 days): 2.0'--------**/
+/**-----------DAY THREE----------------------------**/
 
 .dayThree .btn3 {
     border: 2px solid #d3959b;
@@ -292,7 +291,7 @@ h6 {
 }
 
 
-/**-----------DAY FOUR(2days): 1.30+7'--------**/
+/**-----------DAY FOUR-------------------------**/
 
 .dayFour {
     width: 200px;
@@ -300,63 +299,81 @@ h6 {
 
 .rate {
     border-radius: 10px;
-    color: white;
+    color: #fefefe;
     background: #050506;
-    width: 200px;
+    width: 190px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0;
 }
 
-.star {
-    padding-left: 10px;
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    color: #bec0ce;
+.star span {
+    color: #ffd700;
 }
 
 .dayFour .btn4 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     font-size: 30px;
     color: inherit;
     background: transparent;
-    width: 150px;
+    width: 175px;
     height: 65px;
-    position: relative;
-}
-
-.dayFour .btn4:hover .star:not(.flyingStar) {
-    animation: spin 2s linear infinite;
-    color: #ffd700;
 }
 
 .count {
-    border-left: 1px solid #3e3e3e;
-    padding: 3px;
+    text-align: right;
+    width: 45px;
     font-size: 28px;
     font-weight: bolder;
-    color: #bec0ce;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 68px;
+    color: #ececec;
+}
+
+.count::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #5c5c5c;
+    width: 2px;
+    height: 63px;
+    transform: translate(-50%, -25%);
+}
+
+.btn4:hover .hoverStar {
+    animation: spin 1.3s linear infinite;
 }
 
 .flyingStar {
-    animation: flying 2s ease-out infinite;
-    color: #ffd700;
-    /* transform-origin: -2px -5px;
-    transform: rotate(90deg); */
+    animation: flying 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.78, -0.03, 0.58, 1);
 }
 
 @keyframes flying {
     0% {
-        transform-origin: 5cm 2px;
+        transform-origin: 3cm 4cm;
+        transform: rotate(360deg);
+    }
+    15% {
+        transform-origin: 3cm 5cm;
+        transform: rotate(360deg);
+    }
+    25% {
+        transform-origin: 3cm 6cm;
+        transform: rotate(360deg);
+    }
+    35% {
+        transform-origin: 3cm -5cm;
+        transform: rotate(360deg);
+    }
+    45% {
+        transform-origin: 3cm -6cm;
+        transform: rotate(360deg);
+    }
+    50% {
+        transform-origin: 3cm -7cm;
+        transform: rotate(360deg);
     }
 }
 
@@ -383,6 +400,9 @@ h6 {
         transform: rotateY(360deg);
     }
 }
+
+
+/**-------------RESPONSIVE------------------*/
 
 @media (max-width: 48.125em) {
     .container {

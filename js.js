@@ -29,8 +29,10 @@ const countText = document.getElementsByClassName("count")[0];
 const count = 27;
 
 countText.textContent = `${count}`;
+console.dir(star.classList);
 
 btn4.addEventListener("click", () => {
-    console.dir(star);
+    star.classList.remove("hoverStar");
     star.classList.add("flyingStar");
+    console.dir(star.classList);
 });
