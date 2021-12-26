@@ -250,7 +250,6 @@ h6 {
 /**-----------DAY TWO--------------------------**/
 
 .dayTwo {
-    /* grid-area: 1/2/2/5; */
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -264,7 +263,6 @@ h6 {
     transition: background-color color 200s ease-in-out;
     height: 68px;
     width: 130px;
-    /* transition-property: color; */
 }
 
 .dayTwo .btn2:hover {
@@ -345,35 +343,24 @@ h6 {
 }
 
 .flyingStar {
-    animation: flying 3s;
+    transform-origin: 80px 50%;
+    animation: flying 1s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.78, -0.03, 0.58, 1);
+    animation-timing-function: linear;
 }
 
 @keyframes flying {
     0% {
-        transform-origin: 3cm 4cm;
-        transform: rotate(360deg);
-    }
-    15% {
-        transform-origin: 3cm 5cm;
-        transform: rotate(360deg);
-    }
-    25% {
-        transform-origin: 3cm 6cm;
-        transform: rotate(360deg);
-    }
-    35% {
-        transform-origin: 3cm -5cm;
-        transform: rotate(360deg);
-    }
-    45% {
-        transform-origin: 3cm -6cm;
-        transform: rotate(360deg);
+        opacity: 1;
+        transform: rotateZ(0deg);
     }
     50% {
-        transform-origin: 3cm -7cm;
-        transform: rotate(360deg);
+        opacity: 1;
+        transform: rotateZ(-180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotateZ(-360deg);
     }
 }
 
@@ -399,6 +386,17 @@ h6 {
     100% {
         transform: rotateY(360deg);
     }
+}
+
+
+/**---------------------Day Five----------------*/
+
+.btn5 {
+    width: 175px;
+    height: 60px;
+    background: linear-gradient(to right, #e47070, #bbf0b8, #78b4e6);
+    color: #3e3e3e;
+    font-weight: bolder;
 }
 
 
