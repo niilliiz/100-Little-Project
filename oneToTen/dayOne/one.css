@@ -1,0 +1,218 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-family: "Spartan", sans-serif;
+    font-weight: 400;
+    color: rgba(199, 255, 252, 0.308);
+    background: #bbd2f5d2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border-radius: 4px;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #7e7e7e;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.btn1 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    border: none;
+    background: #447ce7;
+    color: #f2f4ff;
+    font-size: 17px;
+    gap: 28px;
+    height: 70px;
+    width: 178px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: width 0.2s ease-in-out;
+}
+
+.loadingIcons {
+    position: relative;
+}
+
+.fa {
+    font-size: 32px;
+}
+
+.fa-cloud {
+    color: #5e93ef;
+}
+
+.btn1 .cloud {
+    position: absolute;
+}
+
+.btn1.idle :is(.loading, .done, .check, .circle) {
+    display: none;
+}
+
+.btn1.loading :is(.idle, .done, .check, .circle) {
+    display: none;
+}
+
+.btn1.done :is(.idle, .loading) {
+    display: none;
+}
+
+.btn1.done :is(.cloud, .arrow) {
+    opacity: 0;
+}
+
+.btn1 .loadingIcons :is(.cloud, .arrow) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 300ms ease-in-out;
+}
+
+.btn1 .loadingIcons .cloud {
+    left: 20px;
+}
+
+.btn1 .loadingIcons .arrow {
+    left: 20px;
+    top: 10px;
+}
+
+.btn1.loading .loadingIcons .arrow {
+    opacity: 1;
+    left: 12px;
+    top: -13px;
+    animation-name: bouncingArrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: opacity 0.05s ease-in-out;
+}
+
+.btn1.loading .loadingIcons .cloud {
+    animation: rainingClouds 1.5s linear infinite;
+}
+
+.btn1.loading .cloud1 {
+    top: -40px;
+    left: 0px;
+    animation-delay: 0.2s;
+}
+
+.btn1.loading .cloud2 {
+    top: -80px;
+    left: 35px;
+    animation-delay: 1s;
+}
+
+.btn1.loading .cloud3 {
+    top: 20px;
+    left: 35px;
+    animation-delay: 0.8s;
+}
+
+.btn1.done {
+    width: 160px;
+    gap: 0;
+}
+
+.btn1.done .loadingIcons .check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-3px, -15px);
+}
+
+.btn1.done .loadingIcons .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, -22px);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #5e93ef;
+    opacity: 0.7;
+    /* border: 1px solid red; */
+}
+
+@keyframes rainingClouds {
+    from {
+        transform: translate(-50%, -500%);
+    }
+    25% {
+        transform: translate(-50%, -400%);
+    }
+    35% {
+        transform: translate(-50%, -300%);
+    }
+    50% {
+        transform: translate(-50%, -100%);
+    }
+    65% {
+        transform: translate(-50%, 100%);
+    }
+    75% {
+        transform: translate(-50%, 200%);
+    }
+    100% {
+        transform: translate(-50%, 400%);
+    }
+}
+
+@keyframes bouncingArrow {
+    from {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1, 1.1);
+    }
+    50% {
+        transform: scale(1, 1.2);
+    }
+    75% {
+        transform: scale(1, 1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
