@@ -306,7 +306,7 @@ h6 {
 }
 
 .star span {
-    color: #ffd700;
+    color: #ebebeb;
 }
 
 .dayFour .btn4 {
@@ -325,7 +325,7 @@ h6 {
     width: 45px;
     font-size: 28px;
     font-weight: bolder;
-    color: #ececec;
+    color: #ebebeb;
 }
 
 .count::before {
@@ -338,11 +338,14 @@ h6 {
     transform: translate(-50%, -25%);
 }
 
-.btn4:hover .hoverStar {
-    animation: spin 1.3s linear infinite;
+.btn4:hover .star span {
+    color: #ffd700;
+    animation: spin 1.3s linear;
+    animation-fill-mode: forwards;
 }
 
 .flyingStar {
+    color: #ffd700;
     transform-origin: 80px 50%;
     animation: flying 1s;
     animation-fill-mode: forwards;
@@ -351,15 +354,15 @@ h6 {
 
 @keyframes flying {
     0% {
-        opacity: 1;
+        color: #ffd700;
         transform: rotateZ(0deg);
     }
     50% {
-        opacity: 1;
+        color: #ffd700;
         transform: rotateZ(-180deg);
     }
     100% {
-        opacity: 0;
+        color: #ffd700;
         transform: rotateZ(-360deg);
     }
 }
