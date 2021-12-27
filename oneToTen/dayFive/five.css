@@ -6,7 +6,7 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(54, 54, 54);
 }
 
 .RGB {
@@ -23,7 +23,7 @@ body {
 
 .color {
     border: 2px solid #bbb;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(54, 54, 54);
     border-radius: 5px;
     width: 95%;
     height: 250px;
@@ -45,15 +45,15 @@ label {
 
 .red {
     height: 5px;
-    background: linear-gradient(90deg, #000000, #ff0000)
+    background: linear-gradient(90deg, #000000, #ff0000);
 }
 
 .green {
     height: 5px;
-    background: linear-gradient(90deg, #000000, #00ff00)
+    background: linear-gradient(90deg, #000000, #00ff00);
 }
 
 .blue {
     height: 5px;
-    background: linear-gradient(90deg, #000000, #0000ff)
+    background: linear-gradient(90deg, #000000, #0000ff);
 }
