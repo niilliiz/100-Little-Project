@@ -1,7 +1,3 @@
-/***********DAY ONE***********************/
-
-
-
 /***********DAY FOUR***********************/
 
 const rate = document.getElementsByClassName("rate")[0];
@@ -36,3 +32,26 @@ function addCount() {
     btn4.removeEventListener("click", addCount);
     btn4.removeEventListener("click", flyingStar);
 }
+
+/******NAV SIDE************ */
+const navBar = document.getElementsByClassName("navBar")[0];
+
+const navItem = [
+    [
+        { title: "Dashboard", icon: "" },
+        { title: "Report", icon: "" },
+    ],
+    [
+        { title: "Analytics", icon: "" },
+        { title: "Customers", icon: "" },
+        { title: "Order", icon: "" },
+        { title: "Products", icon: "" },
+        { title: "Invoice", icon: "" },
+    ],
+    [
+        { title: "Outlet", icon: "" },
+        { title: "Employee", icon: "" },
+        { title: "Shipment", icon: "" },
+        { title: "Marketing", icon: "" },
+    ],
+];

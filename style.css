@@ -17,7 +17,7 @@ button {
     border: none;
     font-family: inherit;
     cursor: pointer;
-    width: 130px;
+    width: 140px;
     height: 65px;
     font-size: 17px;
     font-weight: bolder;
@@ -34,15 +34,9 @@ h6 {
     margin: 0;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 5px;
-    color: #7e7e7e;
-}
-
 .header {
     color: #3e3e3e;
-    margin: 15px;
+    margin: 25px;
 }
 
 .header::after {
@@ -55,16 +49,32 @@ h6 {
     transform: translateX(50%);
 }
 
-.container {
+.main {
     display: grid;
-    width: 95%;
-    margin: 40px auto;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 0px;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 40px 20px;
+    gap: 10px;
     justify-items: start;
     border-radius: 5px;
-    box-shadow: -2px -2px 5px #aaa;
+    box-shadow: 0px 0px 8px #aaa;
 }
+
+
+/**----------------WRAPPER and CONTAINER--------------*/
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/**----------------SideBar-----------------*/
 
 
 /**----------------------For All Days------------**/
@@ -76,6 +86,12 @@ h6 {
     align-items: center;
     margin: 10px;
     border-radius: 3px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #7e7e7e;
 }
 
 
@@ -163,20 +179,48 @@ h6 {
 
 /**-------------RESPONSIVE------------------*/
 
+@media (max-width: 90em) {
+    /*1440*/
+    .main {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0px;
+    }
+}
+
+@media (max-width: 76.875em) {
+    /*1230*/
+    .main {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0px;
+    }
+}
+
+@media (max-width: 65.625em) {
+    /*1050*/
+    .main {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0px;
+    }
+}
+
 @media (max-width: 48.125em) {
-    .container {
+    /*770*/
+    .main {
         grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
     }
 }
 
 @media (max-width: 40.625em) {
-    .container {
+    /*650*/
+    .main {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 33.125em) {
-    .container {
+    /*530*/
+    .main {
         grid-template-columns: repeat(2, 1fr);
     }
 }
