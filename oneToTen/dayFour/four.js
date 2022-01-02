@@ -1,9 +1,3 @@
-/***********DAY ONE***********************/
-
-
-
-/***********DAY FOUR***********************/
-
 const rate = document.getElementsByClassName("rate")[0];
 const btn4 = document.getElementsByClassName("btn4")[0];
 const star = document.getElementsByClassName("star")[0];
