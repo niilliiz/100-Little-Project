@@ -34,6 +34,13 @@ h6 {
     margin: 0;
 }
 
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     color: #3e3e3e;
     margin: 25px;
@@ -50,8 +57,8 @@ h6 {
 }
 
 .main {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: flex;
+    flex-flow: row wrap;
     margin: 40px 20px;
     gap: 10px;
     justify-items: start;
@@ -71,10 +78,44 @@ h6 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: absolute;
+    left: 23%;
 }
 
 
 /**----------------SideBar-----------------*/
+
+.navBar {
+    padding: 40px 24px;
+    width: 180px;
+    background: #18283b;
+    color: #bbb;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.navBar header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #3b3b3b;
+    padding-bottom: 20px;
+}
+
+.navBar li {
+    margin: 20px 0;
+}
+
+.navBar footer {
+    padding-top: 50px;
+}
+
+.separator {
+    width: 95%;
+    background: #3b3b3b;
+    height: 1px;
+    margin: 40px 0;
+}
 
 
 /**----------------------For All Days------------**/
@@ -178,49 +219,3 @@ h6 {
 
 
 /**-------------RESPONSIVE------------------*/
-
-@media (max-width: 90em) {
-    /*1440*/
-    .main {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 0px;
-    }
-}
-
-@media (max-width: 76.875em) {
-    /*1230*/
-    .main {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 0px;
-    }
-}
-
-@media (max-width: 65.625em) {
-    /*1050*/
-    .main {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0px;
-    }
-}
-
-@media (max-width: 48.125em) {
-    /*770*/
-    .main {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0px;
-    }
-}
-
-@media (max-width: 40.625em) {
-    /*650*/
-    .main {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 33.125em) {
-    /*530*/
-    .main {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}

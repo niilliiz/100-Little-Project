@@ -1,57 +1,51 @@
-/***********DAY FOUR***********************/
-
-const rate = document.getElementsByClassName("rate")[0];
-const btn4 = document.getElementsByClassName("btn4")[0];
-const star = document.getElementsByClassName("star")[0];
-const span = document.getElementsByClassName("fa-star")[0];
-
-const countText = document.getElementsByClassName("count")[0];
-
-let count = 27;
-
-countText.textContent = `${count}`;
-console.dir(star.classList);
-
-btn4.addEventListener("click", flyingStar);
-
-function flyingStar() {
-    // star.classList.remove("hoverStar");
-    span.style.color = "#ffd700";
-    star.classList.add("flyingStar");
-}
-
-btn4.addEventListener("click", addCount);
-
-function addCount() {
-    setTimeout(() => {
-        count++;
-
-        countText.textContent = count;
-        countText.style.color = "#ffd700";
-    }, 600);
-    btn4.removeEventListener("click", addCount);
-    btn4.removeEventListener("click", flyingStar);
-}
-
 /******NAV SIDE************ */
 const navBar = document.getElementsByClassName("navBar")[0];
+const ul = document.createElement("ul");
+const header = document.createElement("header");
+const footer = document.createElement("footer");
 
 const navItem = [
     [
-        { title: "Dashboard", icon: "" },
-        { title: "Report", icon: "" },
+        { title: "Dashboard", icon: ["fa", "sth"] },
+        { title: "Report", icon: ["fa", "sth"] },
     ],
     [
-        { title: "Analytics", icon: "" },
-        { title: "Customers", icon: "" },
-        { title: "Order", icon: "" },
-        { title: "Products", icon: "" },
-        { title: "Invoice", icon: "" },
+        { title: "Analytics", icon: ["fa", "sth"] },
+        { title: "Customers", icon: ["fa", "sth"] },
+        { title: "Order", icon: ["fa", "sth"] },
+        { title: "Products", icon: ["fa", "sth"] },
+        { title: "Invoice", icon: ["fa", "sth"] },
     ],
     [
-        { title: "Outlet", icon: "" },
-        { title: "Employee", icon: "" },
-        { title: "Shipment", icon: "" },
-        { title: "Marketing", icon: "" },
+        { title: "Outlet", icon: ["fa", "sth"] },
+        { title: "Employee", icon: ["fa", "sth"] },
+        { title: "Shipment", icon: ["fa", "sth"] },
+        { title: "Marketing", icon: ["fa", "sth"] },
     ],
 ];
+
+header.textContent = "menu + name";
+footer.textContent = "log + status+onlineStatus";
+
+navBar.appendChild(header);
+
+navItem.map((category) => {
+    category.map((item) => {
+        if (item.title) {
+            const li = document.createElement("li");
+            const span = document.createElement("span");
+            const anchor = document.createElement("a");
+            item.icon.map((classItem) => span.classList.add(classItem));
+            anchor.textContent = item.title;
+            li.appendChild(anchor);
+            li.appendChild(span);
+            ul.appendChild(li);
+        }
+    });
+    const div = document.createElement("div");
+    div.classList.add("separator");
+    ul.appendChild(div);
+});
+
+navBar.appendChild(ul);
+navBar.appendChild(footer);
