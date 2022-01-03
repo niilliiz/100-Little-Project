@@ -1,44 +1,48 @@
 /******NAV SIDE************ */
 const navBar = document.getElementsByClassName("navBar")[0];
-const ul = document.createElement("ul");
-const header = document.createElement("header");
-const footer = document.createElement("footer");
+const ul = document.getElementsByTagName("ul")[0];
+const header = document.getElementsByTagName("header")[0];
+const footer = document.getElementsByTagName("footer")[0];
+const menu = document.getElementsByClassName("menu")[0];
+
+let showMenu = true;
+let items = [navBar, header, ul, footer];
 
 const navItem = [
     [
-        { title: "Dashboard", icon: ["fa", "sth"] },
-        { title: "Report", icon: ["fa", "sth"] },
+        { title: "Dashboard", icon: ["fa", "fa-home"] },
+        { title: "Report", icon: ["fa", "fa-bar-chart"] },
     ],
     [
-        { title: "Analytics", icon: ["fa", "sth"] },
-        { title: "Customers", icon: ["fa", "sth"] },
-        { title: "Order", icon: ["fa", "sth"] },
-        { title: "Products", icon: ["fa", "sth"] },
-        { title: "Invoice", icon: ["fa", "sth"] },
+        { title: "Analytics", icon: ["fa", "fa-pie-chart"] },
+        { title: "Customers", icon: ["fa", "fa-group"] },
+        { title: "Order", icon: ["fa", "fa-shopping-cart"] },
+        { title: "Products", icon: ["fa", "fa-cubes"] },
+        { title: "Invoice", icon: ["fa", "fa-inbox"] },
     ],
     [
-        { title: "Outlet", icon: ["fa", "sth"] },
-        { title: "Employee", icon: ["fa", "sth"] },
-        { title: "Shipment", icon: ["fa", "sth"] },
-        { title: "Marketing", icon: ["fa", "sth"] },
+        { title: "Outlet", icon: ["fa", "fa-shopping-bag"] },
+        { title: "Employee", icon: ["fa", "fa-users"] },
+        { title: "Shipment", icon: ["fa", "fa-truck"] },
+        { title: "Marketing", icon: ["fa", "fa-line-chart"] },
     ],
 ];
-
-header.textContent = "menu + name";
-footer.textContent = "log + status+onlineStatus";
-
-navBar.appendChild(header);
 
 navItem.map((category) => {
     category.map((item) => {
         if (item.title) {
             const li = document.createElement("li");
             const span = document.createElement("span");
-            const anchor = document.createElement("a");
+            const anchorSpan = document.createElement("a");
+            const anchorTitle = document.createElement("a");
             item.icon.map((classItem) => span.classList.add(classItem));
-            anchor.textContent = item.title;
-            li.appendChild(anchor);
-            li.appendChild(span);
+            anchorTitle.textContent = item.title;
+            anchorTitle.classList.add("navList");
+            anchorSpan.href = "/";
+            anchorTitle.href = "/";
+            anchorSpan.appendChild(span);
+            li.appendChild(anchorSpan);
+            li.appendChild(anchorTitle);
             ul.appendChild(li);
         }
     });
@@ -47,5 +51,18 @@ navItem.map((category) => {
     ul.appendChild(div);
 });
 
-navBar.appendChild(ul);
-navBar.appendChild(footer);
+menu.addEventListener("click", () => {
+    showMenu = !showMenu;
+    if (!showMenu) {
+        items.forEach((item) => {
+            console.dir(item);
+            item.classList.add("hide");
+        });
+    }
+    if (showMenu) {
+        items.forEach((item) => {
+            console.dir(item);
+            item.classList.remove("hide");
+        });
+    }
+});

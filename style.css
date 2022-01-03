@@ -29,7 +29,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     padding: 0;
     margin: 0;
 }
@@ -59,11 +60,10 @@ li {
 .main {
     display: flex;
     flex-flow: row wrap;
-    margin: 40px 20px;
-    gap: 10px;
+    margin: 30px 20px;
     justify-items: start;
     border-radius: 5px;
-    box-shadow: 0px 0px 8px #aaa;
+    box-shadow: 0px 0px 10px #ccc;
 }
 
 
@@ -71,43 +71,50 @@ li {
 
 .wrapper {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     position: absolute;
-    left: 23%;
+    left: 28%;
+    margin-left: 15px;
 }
 
 
 /**----------------SideBar-----------------*/
 
 .navBar {
-    padding: 40px 24px;
-    width: 180px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
     background: #18283b;
-    color: #bbb;
+    color: #8392a5;
     position: fixed;
     top: 0;
     bottom: 0;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 10px 10px 0;
+    line-height: 1.5;
+    /* transition: width 300ms ease-in-out; */
+    transition: width 300ms ease-in-out 0s;
 }
 
-.navBar header {
-    margin-bottom: 40px;
-    border-bottom: 1px solid #3b3b3b;
-    padding-bottom: 20px;
+.navBar ul {
+    display: block;
+    padding: 0 24px 0;
+    transition: 300ms ease-in-out 5s;
+    transition-property: display;
 }
 
 .navBar li {
-    margin: 20px 0;
-}
-
-.navBar footer {
-    padding-top: 50px;
+    font-size: 16px;
+    margin: 18px 0;
+    cursor: pointer;
+    padding: 0px 5px;
+    background: #18283b;
+    transition: 300ms ease-in-out;
+    transition-property: background-color, color, border-radius, padding;
 }
 
 .separator {
@@ -115,6 +122,126 @@ li {
     background: #3b3b3b;
     height: 1px;
     margin: 40px 0;
+}
+
+.navBar .fa {
+    margin-inline-end: 15px;
+}
+
+.navBar li:hover {
+    background-color: #0175fd;
+    color: #cfe5ff;
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+
+/**-------------NAVBAR: HEADER-----*/
+
+.navBar header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bolder;
+    color: #cfe5ff;
+    padding: 25px 24px;
+    border-bottom: 1px solid #3b3b3b;
+    transition: display 300ms ease-in-out;
+}
+
+.menu {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu .bar {
+    width: 85%;
+    height: 2px;
+    border-radius: 3px;
+    background: #8392a5;
+    align-self: center;
+}
+
+.menu .bar:nth-child(even) {
+    width: 100%;
+    background-color: #cfe5ff;
+}
+
+
+/**-------------NAVBAR: FOOTER-----*/
+
+.navBar footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+    width: 220px;
+    background: #213348;
+    border-radius: 0px 0px 10px 0px;
+    position: fixed;
+    left: 0;
+    bottom: 1px;
+    transition: 300ms ease-in-out;
+    transition-property: display, width;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: contain;
+}
+
+footer .profileInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+footer .profileStatus {
+    font-size: 13px;
+}
+
+footer .fa-angle-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    align-self: center;
+    background: #8392a5;
+    color: #cfe5ff;
+}
+
+
+/**------------------HIDING----------*/
+
+.navBar.hide {
+    width: 80px;
+}
+
+header.hide span {
+    display: none;
+}
+
+ul.hide .navList {
+    display: none;
+}
+
+footer.hide {
+    width: 50px;
+}
+
+footer.hide .profileInfo,
+footer.hide .fa-angle-up {
+    display: none;
 }
 
 
