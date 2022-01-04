@@ -78,7 +78,7 @@ li {
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 28%;
+    left: 225px;
     margin-left: 15px;
 }
 
@@ -136,7 +136,7 @@ li {
 }
 
 
-/**-------------NAVBAR: HEADER-----*/
+/**-----NAVBAR: HEADER-----*/
 
 .navBar header {
     display: flex;
@@ -173,7 +173,7 @@ li {
 }
 
 
-/**-------------NAVBAR: FOOTER-----*/
+/**-------NAVBAR: FOOTER-----*/
 
 .navBar footer {
     display: flex;
@@ -221,7 +221,7 @@ footer .fa-angle-up {
 }
 
 
-/**------------------HIDING----------*/
+/**---------HIDING----------*/
 
 .navBar.hide {
     width: 80px;
@@ -254,6 +254,10 @@ footer.hide .fa-angle-up {
     align-items: center;
     margin: 10px;
     border-radius: 3px;
+}
+
+button {
+    font-size: 17px;
 }
 
 .title {
@@ -345,4 +349,10 @@ footer.hide .fa-angle-up {
 }
 
 
-/**-------------RESPONSIVE------------------*/
+/**---------------------Day Six----------------*/
+
+.btn6 .radical {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+}

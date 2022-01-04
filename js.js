@@ -1,4 +1,4 @@
-/******NAV SIDE************ */
+/********************NAV SIDE**************************** */
 const navBar = document.getElementsByClassName("navBar")[0];
 const ul = document.getElementsByTagName("ul")[0];
 const header = document.getElementsByTagName("header")[0];
@@ -66,3 +66,31 @@ menu.addEventListener("click", () => {
         });
     }
 });
+
+/********************BTN SIX**************************** */
+
+const btn6 = document.getElementsByClassName("btn6")[0];
+
+function hoverHandler(e) {
+    console.dir(e);
+    const div = document.createElement("div");
+    div.classList.add("radical");
+    btn6.appendChild(div);
+}
+btn6.addEventListener("mouseover", (e) => hoverHandler(e));
+
+console.dir(btn6);
+
+/***
+ * clientHeight: 65
+clientLeft: 0
+clientTop: 0
+clientWidth: 140
+
+
+clientX: 728
+clientY: 317
+
+offsetX: 126
+offsetY: 64
+ */
