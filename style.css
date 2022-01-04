@@ -145,8 +145,16 @@ li {
     font-weight: bolder;
     color: #cfe5ff;
     padding: 25px 24px;
-    border-bottom: 1px solid #3b3b3b;
+    /* border-bottom: 1px solid #3b3b3b; */
     transition: display 300ms ease-in-out;
+}
+
+.navBar .headerSeperator {
+    width: 80%;
+    background: #3b3b3b;
+    height: 1px;
+    margin: 0 auto;
+    /* margin: 0 20px; */
 }
 
 .menu {

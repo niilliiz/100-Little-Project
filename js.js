@@ -93,4 +93,7 @@ clientY: 317
 
 offsetX: 126
 offsetY: 64
+
+        console.log(draggableItem.getBoundingClientRect());
+
  */
