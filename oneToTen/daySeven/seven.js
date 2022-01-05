@@ -7,7 +7,7 @@ console.dir(dragItem);
 let mousePo = { x: 0, y: 0 };
 let itemPo = { x: 0, y: 0 };
 
-let clickedPo = {};
+let area = {};
 
 let isDragging = false;
 
@@ -20,8 +20,8 @@ dragItem.addEventListener("mousedown", (e) => {
     itemPo.x = dragItem.offsetLeft;
     itemPo.y = dragItem.offsetTop;
 
-    clickedPo.x = mousePo.x - itemPo.x;
-    clickedPo.y = mousePo.y - itemPo.y;
+    area.x = mousePo.x - itemPo.x;
+    area.y = mousePo.y - itemPo.y;
 
     isDragging = true;
 });
@@ -31,8 +31,8 @@ document.addEventListener("mousemove", (e) => {
         const currMousePoX = e.clientX || e.pageX;
         const currMousePoY = e.clientY || e.pageY;
 
-        const top = currMousePoY - clickedPo.y;
-        const left = currMousePoX - clickedPo.x;
+        const top = currMousePoY - area.y;
+        const left = currMousePoX - area.x;
 
         dragItem.style.top = `${top}px`;
         dragItem.style.left = `${left}px`;
