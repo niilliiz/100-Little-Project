@@ -7,11 +7,6 @@ body {
     color: #333;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 button {
     border-radius: 4px;
     border: none;
@@ -33,21 +28,6 @@ h6 {
     text-align: center;
     margin-bottom: 5px;
     color: #7e7e7e;
-}
-
-.header {
-    color: #3e3e3e;
-    margin: 15px;
-}
-
-.header::after {
-    content: "";
-    border: 2px solid #ee7470;
-    display: block;
-    width: 150px;
-    margin: 5px;
-    position: absolute;
-    transform: translateX(50%);
 }
 
 

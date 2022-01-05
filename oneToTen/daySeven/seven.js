@@ -1,38 +1,32 @@
-const draggableItem = document.getElementsByClassName("draggableItem")[0]
-const body = document.getElementsByTagName("body")[0]
-console.dir(draggableItem.style);
+const dragItem = document.querySelector(".dragItem");
+const body = document.getElementsByTagName("body")[0];
 
-let pX = null
-let pY = null
+let isDragging = false;
+let dx, dy;
 
+dragItem.addEventListener("mousedown", (e) => {
+    const x = e.pageX || e.clientX;
+    const y = e.pageY || e.clientY;
 
+    dx = x - dragItem.offsetLeft;
+    dy = y - dragItem.offsetTop;
 
-draggableItem.addEventListener("mousedown", (e) => {
-        e.preventDefault()
-        e.stopPropagation();
-        console.log(draggableItem.getBoundingClientRect());
+    isDragging = true;
+});
 
-        pX = e.pageX - draggableItem.getBoundingClientRect().x
-        pY = e.pageY - draggableItem.getBoundingClientRect().y
-        console.log("down: " + pX, pY);
-    })
-    // body.addEventListener("mousemove", (e) => {
-    //     e.preventDefault()
-    //     e.stopPropagation();
-    //     pX = e.pageX
-    //     pY = e.pageY
-    //         // console.log("move: " + pX, pY);
-    //     draggableItem.style.left = `${pX}px`
-    //     draggableItem.style.top = `${pY}px`
+document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+        const x = e.clientX || e.pageX;
+        const y = e.clientY || e.pageY;
 
-// })
-// body.addEventListener("mouseup", (e) => {
-//     e.preventDefault()
-//     e.stopPropagation();
+        const top = y - dy;
+        const left = x - dx;
 
-//     pX = e.pageX
-//     pY = e.pageY
-//         // console.log("up: " + pX, pY);
-//     draggableItem.style.left = `${pX}px`
-//     draggableItem.style.top = `${pY}px`
-// })
+        dragItem.style.top = `${top}px`;
+        dragItem.style.left = `${left}px`;
+    }
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+});
