@@ -12,6 +12,7 @@ body {
 }
 
 img {
+    /*user-select, user-drag: chon ax ro darim drag mikonin in ha ro mizanim, mitunin unComment koni tafavtesh ro zamin k darim drag mikonim, bebinim*/
     user-select: none;
     -webkit-user-drag: none;
     width: 180px;

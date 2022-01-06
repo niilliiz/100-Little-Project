@@ -8,6 +8,8 @@ dragItem.addEventListener("mousedown", (e) => {
     const x = e.pageX || e.clientX;
     const y = e.pageY || e.clientY;
 
+    //dx,dy: fasele bein jaei k click khordeh v zel e balaei v ya chapie ax
+
     dx = x - dragItem.offsetLeft;
     dy = y - dragItem.offsetTop;
 
