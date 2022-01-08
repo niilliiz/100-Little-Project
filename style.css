@@ -361,8 +361,8 @@ button {
 /**---------------------Day SIX----------------*/
 
 .btn6 {
-    background: rgb(255, 242, 248);
-    background: radial-gradient( circle, rgba(255, 242, 248, 0.789838337182448) 35%, rgba(148, 187, 233, 1) 100%);
+    background: #0ca192;
+    background: linear-gradient( -45deg, #0ca192 10%, rgba(206, 255, 252, 0.5) 91%);
     color: #153a5b;
 }
 
@@ -370,7 +370,7 @@ button {
 /**---------------------Day SEVEN----------------*/
 
 .btn7 {
-    background: rgb(34, 193, 195);
-    background: linear-gradient( 0deg, rgba(34, 193, 195, 1) 0%, rgba(206, 255, 252, 1) 100%);
+    background: rgb(255, 242, 248);
+    background: radial-gradient( circle, rgba(255, 242, 248, 0.789838337182448) 35%, rgba(148, 187, 233, 1) 100%);
     color: #153a5b;
 }
