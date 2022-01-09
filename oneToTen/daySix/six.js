@@ -5,9 +5,7 @@ const turn = document.querySelector(".turn");
 const result = document.querySelector(".result");
 const reset = document.querySelector(".reset");
 
-let currentTurn = 0;
 let currPlayer = "X";
-const turns = [1, 2];
 let count = 0;
 
 const winOrder = [
@@ -26,101 +24,82 @@ document.addEventListener("DOMContentLoaded", createBoard);
 function createBoard() {
     count = 0;
     currPlayer = "X";
-    currentTurn = 0;
-    turn.textContent = currPlayer;
 
-    result.textContent = "";
-    turn.textContent = currPlayer;
+    result.style.display = "none";
+    turn.style.display = "block";
+    turn.textContent = `${currPlayer} Turn`;
 
-    boxes.forEach((box) => {
-        box.textContent = "";
-        box.classList.remove("X");
-        box.classList.remove("O");
-        box.addEventListener("click", () => clickBoxHandler(box));
-    });
+    for (let i = 0; i < boxes.length; i++) {
+        console.log(boxes[i].classList);
+        boxes[i].textContent = "";
+        boxes[i].classList.remove("X");
+        boxes[i].classList.remove("O");
+        boxes[i].addEventListener("click", () => clickBoxHandler.call(boxes[i]));
+    }
 }
 
-function clickBoxHandler(box) {
-    count++;
-    currentTurn++;
-    currentTurn = turns[(currentTurn + 1) % turns.length];
-
-    box.textContent = currPlayer;
-    box.classList.add(currPlayer);
-    box.removeEventListener("click", clickBoxHandler);
-
+function clickBoxHandler() {
+    this.textContent = currPlayer;
+    this.classList.add(currPlayer);
     handleNextTurn();
 }
 
-function handleNextTurn() {
-    handleWinChecking();
+// function removeListenerHandler(box) {
+//     box.removeEventListener("click", clickBoxHandler, true);
+// }
 
+function handleNextTurn() {
+    count++;
+    if (count <= 4) {
+        setNextPlayerHandler();
+    } else if (count > 4 && count < 9) {
+        winCheckingHandler();
+        if (count !== 0) {
+            setNextPlayerHandler();
+        }
+    }
+}
+
+function setNextPlayerHandler() {
     if (currPlayer === "X") {
         currPlayer = "O";
-        turn.textContent = currPlayer;
+        turn.textContent = `${currPlayer} Turn`;
     } else {
         currPlayer = "X";
-        turn.textContent = currPlayer;
+        turn.textContent = `${currPlayer} Turn`;
     }
 }
 
-function handleWinChecking() {
-    if (count > 4 && count < 9) {
-        for (let i = 0; i < winOrder.length; i++) {
-            let b1 = boxes[winOrder[i][0]];
-            let b2 = boxes[winOrder[i][1]];
-            let b3 = boxes[winOrder[i][2]];
-            if (
-                b1.classList.contains("X") &&
-                b2.classList.contains("X") &&
-                b3.classList.contains("X")
-            ) {
-                result.textContent = "X won";
-                return;
-            }
-            if (
-                b1.classList.contains("O") &&
-                b2.classList.contains("O") &&
-                b3.classList.contains("O")
-            ) {
-                result.textContent = "O won";
-                return;
-            }
+function winCheckingHandler() {
+    for (let i = 0; i < winOrder.length; i++) {
+        let b1 = boxes[winOrder[i][0]];
+        let b2 = boxes[winOrder[i][1]];
+        let b3 = boxes[winOrder[i][2]];
+        if (
+            b1.classList.contains("X") &&
+            b2.classList.contains("X") &&
+            b3.classList.contains("X")
+        ) {
+            result.style.display = "block";
+            turn.style.display = "none";
+
+            result.textContent = "X won";
+            count = 0;
+            return;
         }
-    }
-    if (count > 8) {
-        result.textContent = "XO DRAW";
+        if (
+            b1.classList.contains("O") &&
+            b2.classList.contains("O") &&
+            b3.classList.contains("O")
+        ) {
+            result.style.display = "block";
+            turn.style.display = "none";
+            result.textContent = "O won";
+            count = 0;
+            return;
+        }
     }
 }
-
-boxes.forEach((box) =>
-    box.addEventListener("click", () => {
-        // count++;
-        // currentTurn++;
-        // currentTurn = turns[(currentTurn + 1) % turns.length];
-
-        // box.textContent = currPlayer;
-        // box.classList.add(currPlayer);
-        // if (count <= 4) {
-        //     if (currPlayer === "X") {
-        //         currPlayer = "O";
-        //         turn.textContent = currPlayer;
-        //     } else {
-        //         currPlayer = "X";
-        //         turn.textContent = currPlayer;
-        //     }
-        // }
-        if ((count > 4) & (count < 9)) {
-            if (currPlayer === "X") {
-                currPlayer = "O";
-                turn.textContent = currPlayer;
-            } else {
-                currPlayer = "X";
-                turn.textContent = currPlayer;
-            }
-        }
-    })
-);
 
 reset.addEventListener("click", createBoard);
 
