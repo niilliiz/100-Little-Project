@@ -73,6 +73,7 @@ button:hover {
     align-items: center;
     font-size: 40px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .b0 {
@@ -109,4 +110,8 @@ button:hover {
 
 .b8 {
     border-left: 7px solid #0ca192;
+}
+
+.won {
+    color: lightgoldenrodyellow;
 }
