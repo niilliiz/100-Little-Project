@@ -29,6 +29,8 @@ function createBoard() {
     result.style.display = "none";
     turn.style.display = "block";
     turn.textContent = `First Choose X|O`;
+    xBtn.classList.remove("active");
+    oBtn.classList.remove("active");
 
     for (let i = 0; i < boxes.length; i++) {
         // console.log(boxes[i].classList);
@@ -65,10 +67,15 @@ function createBoard() {
     function setNextPlayerHandler() {
         if (currPlayer === "X") {
             currPlayer = "O";
+            oBtn.classList.add("active");
+            xBtn.classList.remove("active");
+
             turn.textContent = `${currPlayer} Turn`;
         } else if (currPlayer === "O") {
             currPlayer = "X";
             turn.textContent = `${currPlayer} Turn`;
+            xBtn.classList.add("active");
+            oBtn.classList.remove("active");
         }
     }
 
@@ -130,10 +137,14 @@ function createBoard() {
     xBtn.addEventListener("click", () => {
         currPlayer = "X";
         turn.textContent = `${currPlayer} Turn`;
+        xBtn.classList.add("active");
+        oBtn.classList.remove("active");
     });
     oBtn.addEventListener("click", () => {
         currPlayer = "O";
         turn.textContent = `${currPlayer} Turn`;
+        oBtn.classList.add("active");
+        xBtn.classList.remove("active");
     });
 }
 
