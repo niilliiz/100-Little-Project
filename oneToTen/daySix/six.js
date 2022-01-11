@@ -122,6 +122,7 @@ function createBoard() {
                 result.style.display = "block";
                 turn.style.display = "none";
                 result.textContent = "XO draw";
+                clearBoardHandler();
             }
         }
     }
