@@ -71,7 +71,8 @@ function createBoard() {
             xBtn.classList.remove("active");
 
             turn.textContent = `${currPlayer} Turn`;
-        } else if (currPlayer === "O") {
+        }
+        if (currPlayer === "O") {
             currPlayer = "X";
             turn.textContent = `${currPlayer} Turn`;
             xBtn.classList.add("active");
@@ -92,8 +93,9 @@ function createBoard() {
                 won = true;
 
                 result.style.display = "block";
-                turn.style.display = "none";
                 result.textContent = "X won";
+
+                turn.style.display = "none";
 
                 b1.classList.add("won");
                 b2.classList.add("won");
@@ -109,8 +111,9 @@ function createBoard() {
                 won = true;
 
                 result.style.display = "block";
-                turn.style.display = "none";
                 result.textContent = "O won";
+
+                turn.style.display = "none";
 
                 b1.classList.add("won");
                 b2.classList.add("won");
@@ -120,8 +123,11 @@ function createBoard() {
             }
             if (!won && count > 8) {
                 result.style.display = "block";
-                turn.style.display = "none";
                 result.textContent = "XO draw";
+
+                turn.style.display = "none";
+
+                clearBoardHandler();
             }
         }
     }
