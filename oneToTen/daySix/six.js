@@ -166,8 +166,8 @@ const board = [
     [0, 0, 0],
 ];
 
-const p1 = { value: "X", key: 1 };
-const p2 = { value: "O", key: 2 };
+const p1 = { value: "X", key: -1 };
+const p2 = { value: "O", key: 1 };
 
 const unit = board.length;
 
@@ -221,12 +221,36 @@ function createBoard() {
             xBtn.classList.add("active");
             oBtn.classList.remove("active");
         }
-        console.log(board);
     }
 
     function checkForWinHandler() {
-        for (let i = 0; i < board.unit; i++) {
-            for (let j = 0; j < board[i].unit; j++) {}
+        let h = [],
+            v = [],
+            d1 = [],
+            d2 = [];
+        let index = unit - 1;
+
+        for (let i = 0; i < board.length; i++) {
+            h = [];
+            v = [];
+            d1.push(board[i][i]);
+            d2.push(board[i][index - i]);
+
+            for (let j = 0; j < board[i].length; j++) {
+                h.push(board[i][j]);
+                v.push(board[j][i]);
+            }
+            let H = h.reduce((acc, item) => acc + item) / 3;
+            let V = v.reduce((acc, item) => acc + item) / 3;
+            let D1 = d1.reduce((acc, item) => acc + item) / 3;
+            let D2 = d2.reduce((acc, item) => acc + item) / 3;
+
+            if (H === 1 || V === 1 || D1 === 1 || D2 === 1) {
+                console.log("o wins");
+            }
+            if (H === -1 || V === -1 || D1 === -1 || D2 === -1) {
+                console.log("X wins");
+            }
         }
     }
 }
