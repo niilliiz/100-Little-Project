@@ -253,4 +253,123 @@ function createBoard() {
             }
         }
     }
+
+    function checkForWinHandler2() {
+        let h = [],
+            v = [],
+            d1 = [],
+            d2 = [];
+        let index = unit - 1;
+
+        for (let i = 0; i < board.length; i++) {
+            h = [];
+            v = [];
+            d1.push(board[i][i]);
+            d2.push(board[i][index - i]);
+
+            for (let j = 0; j < board[i].length; j++) {
+                h.push(board[i][j]);
+                v.push(board[j][i]);
+            }
+
+            let H = h.reduce((acc, item) => acc + item) / 3;
+            let V = v.reduce((acc, item) => acc + item) / 3;
+            let D1 = d1.reduce((acc, item) => acc + item) / 3;
+            let D2 = d2.reduce((acc, item) => acc + item) / 3;
+
+            if (H === 1 || V === 1 || D1 === 1 || D2 === 1) {
+                console.log("o wins");
+            }
+            if (H === -1 || V === -1 || D1 === -1 || D2 === -1) {
+                console.log("X wins");
+            }
+        }
+    }
+
+    function checkForWinHandler() {
+        let h = [0, 0, 0],
+            v = [0, 0, 0],
+            d1 = 0,
+            d2 = 0;
+
+        for (let i = 0; i < board.length; i++) {
+            for (let j = 0; j < board.length; j++) {
+                if (i === j) {
+                    d1 += board[i][j];
+                }
+
+                if (i === 2 - j) {
+                    d2 += board[i][j];
+                }
+
+                h[i] += board[i][j];
+                v[j] += board[i][j];
+
+                let winner = 0;
+                if (i === 2 && Math.abs(d1) === 3) {
+                    winner = Math.sign(d1);
+                } else if (i === 2 && Math.abs(d2) === 3) {
+                    winner = Math.sign(d2);
+                } else if (j === 2 && Math.abs(h[i]) === 3) {
+                    winner = Math.sign(h[i]);
+                } else if (i === 2 && Math.abs(v[j]) === 3) {
+                    winner = Math.sign(v[j]);
+                }
+
+                if (winner) {
+                    return console.log(winner > 0 ? 'O Wins' : 'X Wins');
+                }
+            }
+        }
+
+        if (count === 9) {
+            console.log('Draw');
+        }
+    }
+}
+
+
+
+function isPrime1(number) {
+    let c = 0;
+
+    if ((number & 1) === 0) {
+        return false;
+    }
+
+    for (let i = 1; i <= number; i++) {
+        if (number % i === 0) {
+            c++;
+        }
+    }
+
+    return c === 2;
+}
+
+function isPrime2(number) {
+    if ((number & 1) === 0) {
+        return false;
+    }
+
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function isPrime3(number) {
+    if ((number & 1) === 0) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
 }
