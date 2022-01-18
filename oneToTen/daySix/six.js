@@ -3,7 +3,7 @@
 // const boxes = document.querySelectorAll(".box");
 // const xBtn = document.querySelector(".xBtn");
 // const oBtn = document.querySelector(".oBtn");
-// const turn = document.querySelector(".turn");
+// const status = document.querySelector(".status");
 // const result = document.querySelector(".result");
 // const reset = document.querySelector(".reset");
 
@@ -29,8 +29,8 @@
 
 //     result.textContent = "";
 //     result.style.display = "none";
-//     turn.style.display = "block";
-//     turn.textContent = `First Choose X|O`;
+//     status.style.display = "block";
+//     status.textContent = `First Choose X|O`;
 //     xBtn.classList.remove("active");
 //     oBtn.classList.remove("active");
 
@@ -72,10 +72,10 @@
 //             oBtn.classList.add("active");
 //             xBtn.classList.remove("active");
 
-//             turn.textContent = `${currPlayer} Turn`;
+//             status.textContent = `${currPlayer} Turn`;
 //         } else if (currPlayer === "O") {
 //             currPlayer = "X";
-//             turn.textContent = `${currPlayer} Turn`;
+//             status.textContent = `${currPlayer} Turn`;
 //             xBtn.classList.add("active");
 //             oBtn.classList.remove("active");
 //         }
@@ -94,7 +94,7 @@
 //                 won = true;
 
 //                 result.style.display = "block";
-//                 turn.style.display = "none";
+//                 status.style.display = "none";
 //                 result.textContent = "X won";
 
 //                 b1.classList.add("won");
@@ -111,7 +111,7 @@
 //                 won = true;
 
 //                 result.style.display = "block";
-//                 turn.style.display = "none";
+//                 status.style.display = "none";
 //                 result.textContent = "O won";
 
 //                 b1.classList.add("won");
@@ -122,7 +122,7 @@
 //             }
 //             if (!won && count > 8) {
 //                 result.style.display = "block";
-//                 turn.style.display = "none";
+//                 status.style.display = "none";
 //                 result.textContent = "XO draw";
 //                 clearBoardHandler();
 //             }
@@ -139,13 +139,13 @@
 
 //     xBtn.addEventListener("click", () => {
 //         currPlayer = "X";
-//         turn.textContent = `${currPlayer} Turn`;
+//         status.textContent = `${currPlayer} Turn`;
 //         xBtn.classList.add("active");
 //         oBtn.classList.remove("active");
 //     });
 //     oBtn.addEventListener("click", () => {
 //         currPlayer = "O";
-//         turn.textContent = `${currPlayer} Turn`;
+//         status.textContent = `${currPlayer} Turn`;
 //         oBtn.classList.add("active");
 //         xBtn.classList.remove("active");
 //     });
@@ -154,8 +154,7 @@
 const boxes = document.querySelectorAll(".box");
 const xBtn = document.querySelector(".xBtn");
 const oBtn = document.querySelector(".oBtn");
-const turn = document.querySelector(".turn");
-const result = document.querySelector(".result");
+const status = document.querySelector(".status");
 const reset = document.querySelector(".reset");
 
 document.addEventListener("DOMContentLoaded", createBoard);
@@ -175,10 +174,8 @@ function createBoard() {
     let currentPlayer = p1;
     let count = 0;
 
-    result.textContent = "";
-    result.style.display = "none";
-    turn.style.display = "block";
-    turn.textContent = `First Choose X|O`;
+    status.classList.remove("won");
+    status.textContent = `Game Starts With X`;
 
     for (let i = 0; i < board.unit; i++) {
         for (let j = 0; j < board[i].unit; j++) {
@@ -197,60 +194,32 @@ function createBoard() {
         const id = +this.id;
         const i = Math.floor(id / unit);
         const j = id % unit;
+        const currBox = this;
 
-        this.textContent = currentPlayer.value;
+        currBox.textContent = currentPlayer.value;
         board[i][j] = currentPlayer.key;
 
-        nextTurnHandler();
+        nextTurnHandler(currBox);
 
         if (count > 4) {
             checkForWinHandler();
         }
     }
 
-    function nextTurnHandler() {
+    function nextTurnHandler(currBox) {
+        currBox.removeEventListener("click", clickHandler);
         if (currentPlayer === p1) {
             currentPlayer = p2;
+
+            status.textContent = `${currentPlayer.value} Turn`;
             oBtn.classList.add("active");
             xBtn.classList.remove("active");
-
-            turn.textContent = `${currentPlayer.value} Turn`;
         } else if (currentPlayer === p2) {
             currentPlayer = p1;
-            turn.currentPlayer = `${currentPlayer.value} Turn`;
+
+            status.textContent = `${currentPlayer.value} Turn`;
             xBtn.classList.add("active");
             oBtn.classList.remove("active");
-        }
-    }
-
-    function checkForWinHandler() {
-        let h = [],
-            v = [],
-            d1 = [],
-            d2 = [];
-        let index = unit - 1;
-
-        for (let i = 0; i < board.length; i++) {
-            h = [];
-            v = [];
-            d1.push(board[i][i]);
-            d2.push(board[i][index - i]);
-
-            for (let j = 0; j < board[i].length; j++) {
-                h.push(board[i][j]);
-                v.push(board[j][i]);
-            }
-            let H = h.reduce((acc, item) => acc + item) / 3;
-            let V = v.reduce((acc, item) => acc + item) / 3;
-            let D1 = d1.reduce((acc, item) => acc + item) / 3;
-            let D2 = d2.reduce((acc, item) => acc + item) / 3;
-
-            if (H === 1 || V === 1 || D1 === 1 || D2 === 1) {
-                console.log("o wins");
-            }
-            if (H === -1 || V === -1 || D1 === -1 || D2 === -1) {
-                console.log("X wins");
-            }
         }
     }
 
@@ -317,59 +286,77 @@ function createBoard() {
                 }
 
                 if (winner) {
-                    return console.log(winner > 0 ? 'O Wins' : 'X Wins');
+                    if (winner > 0) {
+                        status.classList.add("won");
+                        status.textContent = `O won`;
+
+                        clearBoardHandler();
+                    }
+                    if (winner < 0) {
+                        status.classList.add("won");
+                        status.textContent = `X won`;
+
+                        clearBoardHandler();
+                    }
                 }
             }
         }
 
         if (count === 9) {
-            console.log('Draw');
-        }
-    }
-}
-
-
-
-function isPrime1(number) {
-    let c = 0;
-
-    if ((number & 1) === 0) {
-        return false;
-    }
-
-    for (let i = 1; i <= number; i++) {
-        if (number % i === 0) {
-            c++;
+            status.textContent = `X|O drew`;
+            clearBoardHandler();
         }
     }
 
-    return c === 2;
-}
-
-function isPrime2(number) {
-    if ((number & 1) === 0) {
-        return false;
-    }
-
-    for (let i = 2; i < number; i++) {
-        if (number % i === 0) {
-            return false;
+    function clearBoardHandler() {
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].removeEventListener("click", clickHandler);
         }
     }
 
-    return true;
+    reset.addEventListener("click", createBoard);
 }
 
-function isPrime3(number) {
-    if ((number & 1) === 0) {
-        return false;
-    }
+// function isPrime1(number) {
+//     let c = 0;
 
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 0) {
-            return false;
-        }
-    }
+//     if ((number & 1) === 0) {
+//         restatus false;
+//     }
 
-    return true;
-}
+//     for (let i = 1; i <= number; i++) {
+//         if (number % i === 0) {
+//             c++;
+//         }
+//     }
+
+//     restatus c === 2;
+// }
+
+// function isPrime2(number) {
+//     if ((number & 1) === 0) {
+//         restatus false;
+//     }
+
+//     for (let i = 2; i < number; i++) {
+//         if (number % i === 0) {
+//             restatus false;
+//         }
+//     }
+
+//     restatus true;
+// }
+
+// function isPrime3(number) {
+//     if ((number & 1) === 0) {
+//         restatus false;
+//     }
+
+//     for (let i = 2; i <= Math.sqrt(number); i++) {
+//         if (number % i === 0) {
+//             restatus false;
+//         }
+//     }
+
+//     restatus true;
+// }

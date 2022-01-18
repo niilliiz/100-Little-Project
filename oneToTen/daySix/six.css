@@ -41,14 +41,23 @@ button {
     font: inherit;
     color: inherit;
     background: #fefefe;
+    border: none;
     border: 2px solid #a3a3a3;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 8px 15px;
     transition: 300ms ease-in-out;
     transition-property: color, border-color, font-weight;
 }
 
-button:hover {
+.xBtn,
+.oBtn {
+    border: none;
+    border-bottom: 3px solid #a3a3a3;
+    border-radius: 0px;
+}
+
+button:not(.xBtn, .oBtn):hover {
+    cursor: pointer;
     border-color: #95d1cc;
     color: #95d1cc;
     font-weight: bolder;
@@ -61,7 +70,7 @@ button:hover {
     font-weight: bolder;
 }
 
-.turn {
+.status {
     text-align: center;
     flex-grow: 1;
     font-size: 25px;
@@ -128,40 +137,17 @@ button:hover {
 }
 
 .won {
-    color: #e2c275;
+    background: #f9f3df;
+    color: #5584ac;
 }
 
-.result {
+.status {
     padding: 10px;
-    /* border: 2px solid #e2c275; */
     border-radius: 3px;
-    background: #f9f3df;
     text-align: center;
     flex-grow: 1;
     font-size: 25px;
     letter-spacing: 1.5px;
-    color: #22577e;
+    color: #5584ac;
     font-weight: 600;
 }
-
-
-/* 
-.clear {
-    animation-name: scale;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    transition: transform 200ms ease-in-out;
-}
-
-@keyframes scale {
-    0% {
-        transform: scale(1.1px, 1.1px);
-    }
-    50% {
-        transform: scale(1.2px, 1.2px);
-    }
-    100% {
-        transform: scale(1px, 1px);
-    }
-} */
