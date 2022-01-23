@@ -12,41 +12,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./six.css">
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 
 
 </head>
 
 <body>
-    <div class="XO">
-        <header>
-            <div class="row">
-                <button class="xBtn">  Player X </button>
-                <button class="oBtn">Player O</button>
+    <div class="RGB">
+        <div class="color"></div>
+        <label>R</label>
+        <input type="range" class="range red" min="0" max="255" value="0">
 
-            </div>
-            <div class="row">
-                <p class="status"></p>
-            </div>
-            <div class="row">
-                <button class="reset">RESET</button>
-            </div>
-        </header>
-        <div class="boxes">
-            <div class="box b0"></div>
-            <div class="box b1"></div>
-            <div class="box b2"></div>
-            <div class="box b3"></div>
-            <div class="box b4"></div>
-            <div class="box b5"></div>
-            <div class="box b6"></div>
-            <div class="box b7"></div>
-            <div class="box b8"></div>
-        </div>
+        <label>G</label>
+        <input type="range" class="range green" min="0" max="255" value="0">
 
+        <label>B</label>
+        <input type="range" class="range blue" min="0" max="255" value="0">
     </div>
-    <script src="six.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
