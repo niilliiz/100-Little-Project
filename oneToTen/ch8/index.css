@@ -28,18 +28,17 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    background: #bbb;
 }
 
 .smallDot {
     width: 5px;
     height: 5px;
-    background: #bbb;
 }
 
 .bigDot {
     width: 9px;
     height: 9px;
-    background: #bbb;
 }
 
 .time {
@@ -47,6 +46,44 @@ body {
     transform: translate(-50%, -50%);
     margin-top: 2px;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 22px;
     color: #a7a7a7;
+}
+
+.hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    border-radius: 5px;
+}
+
+.hourHand {
+    width: 150px;
+    height: 8px;
+    background: #bbb;
+}
+
+.minuteHand {
+    width: 180px;
+    height: 5px;
+    background: #bbb;
+    opacity: 0.5;
+}
+
+.secondHand {
+    width: 190px;
+    height: 2px;
+    background: #a38f1c;
+}
+
+.middleDOt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: #bbb;
+    width: 15px;
+    height: 15px;
 }
