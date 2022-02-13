@@ -1,0 +1,135 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "Spartan", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+button {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.taskManager {
+    background: #3e3e3e;
+    width: 450px;
+    min-height: 550px;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding: 15px 10px;
+}
+
+.taskHeader {
+    display: flex;
+    gap: 13px;
+}
+
+.taskHeader input {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 9px;
+    flex-grow: 1;
+    background: #333;
+    opacity: 0.9;
+    color: #bbb;
+    font-size: 16px;
+}
+
+.addBtn {
+    width: 50px;
+    background: #ecf075;
+    color: #3c3c3c;
+}
+
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    border-bottom: 0.5px solid rgba(124, 124, 124, 0.405);
+}
+
+.wrapper {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+}
+
+.task .title {
+    color: #bbb;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.task .checkbox {
+    width: 19px;
+    height: 19px;
+    border: none;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.task .deleteBtn {
+    background: transparent;
+    color: #bbb;
+    font-size: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.task .showBtn {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.checked .checkbox {
+    background-color: #ecf075;
+}
+
+.checked .title {
+    text-decoration: line-through;
+}
+
+
+/*-----------DELETING TASK*/
+
+.deletedTask {
+    display: none;
+}
+
+
+/*------------------DRAGGING*/
+
+.isDragging {
+    opacity: 0;
+}

@@ -256,7 +256,7 @@ footer.hide .fa-angle-up {
 
 /**----------------------For All CHs------------**/
 
-.day {
+.challenge {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
