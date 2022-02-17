@@ -382,3 +382,12 @@ button {
     background: #454545;
     color: rgba(240, 239, 134, 0.8);
 }
+
+
+/**---------------------CH NINE----------------*/
+
+.btn9 {
+    background: #3c3c3c;
+    background: linear-gradient( -45deg, #ecf075 10%, rgba(255, 178, 105, 0.5) 91%);
+    color: #3c3c3c;
+}

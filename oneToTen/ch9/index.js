@@ -38,8 +38,6 @@ function addNewTaskHandler(task) {
     span.textContent = task.title;
     checkbox.type = task.checked;
 
-    li.setAttribute("id", id);
-
     li.classList.add("task");
     div.classList.add("wrapper");
     span.classList.add("title");
@@ -74,7 +72,7 @@ function mouseLeaveHandler() {
 }
 
 function checkBoxClickingHandler() {
-    this.parentElement.classList.add("checked");
+    this.parentElement.classList.toggle("checked");
 }
 
 function deleteTaskHandler() {
