@@ -150,7 +150,7 @@ li {
     transition: display 300ms ease-in-out;
 }
 
-.navBar .headerSeperator {
+.navBar .headerSeparator {
     width: 80%;
     background: #3b3b3b;
     height: 1px;
