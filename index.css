@@ -391,3 +391,12 @@ button {
     background: linear-gradient( -45deg, #ecf075 10%, rgba(255, 178, 105, 0.5) 91%);
     color: #3c3c3c;
 }
+
+
+/**---------------------CH TEN----------------*/
+
+.btn10 {
+    background: #3c3c3c;
+    background: linear-gradient( 250deg, #d8778a 10%, rgba(255, 255, 254, 0.938) 90%);
+    color: #3c3c3c;
+}
