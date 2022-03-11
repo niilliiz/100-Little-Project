@@ -13,14 +13,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <title>Document</title>
+    <title>COLOR SELECTOR</title>
 
 
 </head>
 
 <body>
-    <div class="drag">
-        <img src="asset/dragItem.png" alt="" class="dragItem">
+    <div class="RGB">
+        <div class="color"></div>
+        <label>R</label>
+        <input type="range" class="range red" min="0" max="255" value="0">
+
+        <label>G</label>
+        <input type="range" class="range green" min="0" max="255" value="0">
+
+        <label>B</label>
+        <input type="range" class="range blue" min="0" max="255" value="0">
     </div>
     <script src="./index.js"></script>
 </body>
