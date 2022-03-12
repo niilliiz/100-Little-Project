@@ -6,10 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <title>CEHCKBOX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CHECKBOX</title>
 </head>
 
 <body>
+    <div class="container">
+        <section>
+            <!--checkbox: simple + flipping -->
+            <div class="wrapper">
+                <label class="checkbox simple input">
+                    <input class="sCh" type="checkbox">
+                    <div class="tick">
+                        <i class="fa fa-check"></i>
+                    </div>
+                </label>
+                <span>Simple Checkbox</span>
+            </div>
+            <div class="wrapper">
+                <label class="checkbox flipping input">
+                    <input class="fCh" type="checkbox">
+
+                    <div class="flipped"></div>
+
+                    <div class="tick">
+                        <i class="fa fa-check"></i>
+                    </div>
+                </label>
+                <span>Flipping Checkbox</span>
+            </div>
+        </section>
+        <section>
+            <!-- switch: simple + flipping -->
+        </section>
+        <section>
+            <!-- line switch-->
+        </section>
+    </div>
     <script src="./index.js"></script>
 </body>
 

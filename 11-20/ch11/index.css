@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #5856d6;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.fa {
+    font-size: 13px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.container section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    display: none;
+}
+
+
+/*-----------CHECKBOX------------------*/
+
+.wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: #ececec;
+    font-size: 20px;
+}
+
+.checkbox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s ease-in-out;
+}
+
+
+/*---------------SIMPLE-------------------*/
+
+.simple .tick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ececec;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.simple .tick:hover {
+    border-color: var(--primary-color);
+}
+
+.simple .tick i {
+    display: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.simple .sCh:checked+.tick {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.sCh:checked+.tick i {
+    display: block;
+}
+
+
+/*---------------FLIPPING-------------------*/
+
+.flipping {
+    cursor: pointer;
+}
+
+.flipped {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ececec;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.flipping .tick {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: display 0.3s ease-in-out;
+}
+
+.flipping .fCh:checked+.flipped {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: rotateY(180deg);
+}
+
+.flipping .fCh:checked~.tick {
+    display: flex;
+}
