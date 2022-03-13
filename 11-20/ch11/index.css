@@ -1,5 +1,6 @@
 :root {
     --primary-color: #5856d6;
+    --secondary-color: #bbb;
 }
 
 * {
@@ -24,7 +25,8 @@ body {
 
 .container {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
 }
 
 .container section {
@@ -35,6 +37,13 @@ body {
 
 input {
     display: none;
+    width: 0;
+    height: 0;
+}
+
+span {
+    color: var(--secondary-color);
+    font-size: 20px;
 }
 
 
@@ -44,8 +53,6 @@ input {
     display: flex;
     gap: 15px;
     align-items: center;
-    color: #ececec;
-    font-size: 20px;
 }
 
 .checkbox {
@@ -65,7 +72,7 @@ input {
     align-items: center;
     width: 30px;
     height: 30px;
-    border: 2px solid #ececec;
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
     background-color: transparent;
     transition: all 0.2s ease-in-out;
@@ -100,7 +107,7 @@ input {
 .flipped {
     width: 30px;
     height: 30px;
-    border: 2px solid #ececec;
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
@@ -123,4 +130,137 @@ input {
 
 .flipping .fCh:checked~.tick {
     display: flex;
+}
+
+
+/*-----------SWITCH--------------*/
+
+.switchWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ballContainer {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--secondary-color);
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 2px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.ballContainer:hover {
+    border-color: var(--primary-color);
+}
+
+.ball {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    transition: 0.4s ease-in-out;
+    transition-property: transform, background-color;
+}
+
+
+/*-----------SWITCH: Simple--------------*/
+
+.simpleSwitch .swCh:checked+.ballContainer {
+    border: none;
+    background-color: var(--primary-color);
+}
+
+.simpleSwitch .swCh:checked+.ballContainer .ball {
+    background-color: #eee;
+    transform: translateX(150%);
+}
+
+
+/*-----------SWITCH: Smiley--------------*/
+
+.smileySwitch .syCh:checked+.ballContainer {
+    border: none;
+    background-color: var(--primary-color);
+}
+
+.smileySwitch .ballContainer .ball svg :is(circle, path) {
+    transition: all 0.3s ease-in-out;
+}
+
+.smileySwitch .syCh:checked+.ballContainer .ball {
+    background-color: #eee;
+    transform: translateX(150%);
+}
+
+.smileySwitch .syCh:checked+.ballContainer .ball svg circle {
+    fill: var(--primary-color);
+}
+
+.smileySwitch .syCh:checked+.ballContainer .ball svg path {
+    stroke: var(--primary-color);
+    d: path("M25,70 Q50,90,75,70");
+}
+
+
+/*-------------------LINE Switch------------------------*/
+
+.lineSwitchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 32px;
+    background: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.outerBall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.outerBall:hover {
+    background-color: var(--primary-color);
+}
+
+.innerBall {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.line {
+    width: 37px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 0 2px 2px 0;
+}
+
+.lineSwitch .lCh:checked+.lineSwitchContainer .square {
+    transform: translateX(140%);
+}
+
+.lineSwitch .lCh:checked+.lineSwitchContainer .square :is(.outerBall, .innerBall) {
+    background-color: #eee;
 }
