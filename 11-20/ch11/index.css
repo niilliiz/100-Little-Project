@@ -95,6 +95,7 @@ span {
 
 .sCh:checked+.tick i {
     display: block;
+    color: #eee;
 }
 
 
@@ -119,7 +120,8 @@ span {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: display 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    transition-property: color, display;
 }
 
 .flipping .fCh:checked+.flipped {
@@ -130,6 +132,7 @@ span {
 
 .flipping .fCh:checked~.tick {
     display: flex;
+    color: #eee;
 }
 
 
