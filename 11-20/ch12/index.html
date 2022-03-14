@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CHECKBOX</title>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <!--checkbox: simple + flipping -->
+            <div class="wrapper">
+                <label class="checkbox simple input">
+                    <input class="sCh" type="checkbox">
+                    <div class="tick">
+                        <i class="fa fa-check"></i>
+                    </div>
+                </label>
+                <span>Simple Checkbox</span>
+            </div>
+            <div class="wrapper">
+                <label class="checkbox flipping input">
+                    <input class="fCh" type="checkbox">
+
+                    <div class="flipped"></div>
+
+                    <div class="tick">
+                        <i class="fa fa-check"></i>
+                    </div>
+                </label>
+                <span>Flipping Checkbox</span>
+            </div>
+        </section>
+        <section>
+            <!-- switch: simple + smiley -->
+            <div class="switchWrapper">
+                <label class="simpleSwitch">
+                    <input class="swCh" type="checkbox">
+                    <div class="ballContainer">
+                        <div class="ball"></div>
+                    </div>
+                </label>
+                <span>Simple Switch</span>
+            </div>
+            <div class="switchWrapper">
+                <label class="smileySwitch">
+                    <input type="checkbox" class="syCh">
+                    <div class="ballContainer">
+                        <div class="ball">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="30" cy="37" r="10" fill='#333'/> 
+                                <circle cx="70" cy="37" r="10" fill='#333'/>
+                                <path d="M25,70 Q50,50,75,70" fill="none" stroke="#333" stroke-width="10" stroke-linecap="round"></path>
+                              </svg>
+                        </div>
+                    </div>
+                </label>
+                <span>Smiley Switch</span>
+            </div>
+        </section>
+        <section>
+            <!-- line switch-->
+            <div class="switchWrapper">
+                <label class="lineSwitch">
+                    <input type="checkbox" class="lCh">
+                    <div class="lineSwitchContainer">
+                        <div class="square">
+                            <div class="outerBall">
+                                <div class="innerBall"></div>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                   
+                </label>
+                <span>Line Switch</span>
+            </div>
+        </section>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
