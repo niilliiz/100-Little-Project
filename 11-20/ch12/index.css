@@ -1,4 +1,80 @@
-:root {
-    --primary-color: #5856d6;
-    --secondary-color: rgb(187, 187, 187);
+/*------------------GLOBAL------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
+
+body {
+    --button-border-color: #d1d1d6;
+    --primary-color: #8e8e93;
+    --switch-border-color: #d0d0d5;
+    --switch-bg-color: #e5e5ea;
+    --bg-color: #f2f2f7;
+    --primary-text-color: #1c1c1e;
+    --secondary-text-color: #8e8e93;
+    --text-header-color: #3a3a3a;
+    --purple-color: #6462df;
+}
+
+body.dark {
+    --button-border-color: #636366;
+    --primary-color: #aeaeb2;
+    --switch-border-color: #48484a;
+    --switch-bg-color: #3a3a3c;
+    --bg-color: #2c2c2e;
+    --primary-text-color: #f9f9fd;
+    --secondary-text-color: #aeaeac;
+    --text-header-color: #e5e5ea;
+    --purple-color: #6462df;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    /* display: none; */
+}
+
+.container {
+    border: 1px solid lightblue;
+    width: 76%;
+    margin: 0 auto;
+}
+
+
+/*---------------HEADER-----------------*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
 }
