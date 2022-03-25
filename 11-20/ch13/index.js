@@ -82,7 +82,6 @@ function checkSnakePlace() {
         (head >= unit * unit && dir === unit) ||
         squares.children[head + dir].classList.contains("snake")
     ) {
-        //left edge
         hit = true;
         return hit;
     }
@@ -104,7 +103,6 @@ function isAteApple(tail) {
 }
 
 function hitTheEdge() {
-    console.log("hit the edge");
     clearInterval(appleInterval);
     clearInterval(snakeInterval);
     squares.style.borderColor = "#a02f2f";
