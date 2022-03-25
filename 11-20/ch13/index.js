@@ -75,23 +75,14 @@ function checkSnakePlace() {
     const head = snake[0];
     const tail = snake[length - 1];
     let hit = false;
-    if (!((head - dir) % unit) && dir === -1) {
+    if (
+        (!((head - dir) % unit) && dir === -1) ||
+        (!(head % unit) && dir === 1) ||
+        (head < 0 && dir === -unit) ||
+        (head >= unit * unit && dir === unit) ||
+        squares.children[head + dir].classList.contains("snake")
+    ) {
         //left edge
-        hit = true;
-        return hit;
-    }
-    if (!(head % unit) && dir === 1) {
-        //right
-        hit = true;
-        return hit;
-    }
-    if (head < 0 && dir === -unit) {
-        //up
-        hit = true;
-        return hit;
-    }
-    if (head >= unit * unit && dir === unit) {
-        //bottom
         hit = true;
         return hit;
     }
