@@ -54,6 +54,11 @@ body {
     gap: 16px;
     padding: 24px 32px;
     cursor: pointer;
+    transition: border-top 0.3s ease-in-out;
+}
+
+.openHeader {
+    border-top: 3px solid var(--green-primary-color);
 }
 
 .header span {
