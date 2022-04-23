@@ -65,10 +65,16 @@ body {
     transform: rotateZ(180deg);
 }
 
+.openHeader p,
+.openHeader span {
+    color: var(--green-primary-color);
+}
+
 .header span {
     color: var(--light-gray-color);
-    font-size: 18.4px;
+    font-size: 21.16px;
     font-weight: 500;
+    transition: color 0.3s ease-in-out;
 }
 
 .header p {
@@ -76,6 +82,7 @@ body {
     font-size: 21.16px;
     font-weight: 500;
     flex-grow: 1;
+    transition: color 0.3s ease-in-out;
 }
 
 .header i {
@@ -84,6 +91,11 @@ body {
     color: var(--green-primary-color);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+}
+
+.openHeader p,
+.openHeader span {
+    color: var(--green-primary-color);
 }
 
 .information {
