@@ -13,10 +13,7 @@ function openAccordionHandler(index) {
             acc.children[1].classList.remove("openAccordion");
     });
 
-    if (
-        accordions[index].children[1].classList.toggle("openAccordion") ||
-        accordions[index].children[0].classList.toggle("openHeader")
-    ) {
+    if (accordions[index].children[1].classList.toggle("openAccordion")) {
         accordions[index].children[1].classList.add("openAccordion");
         accordions[index].children[0].classList.add("openHeader");
     }
