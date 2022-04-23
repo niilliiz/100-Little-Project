@@ -1,0 +1,109 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+9.15   /  10.52  /  12.10  /  13.91  /  16  /  18.4   /  21.16  /  24.33  /  27.98  /  32.18  /  37.01  /  42.56  /  48.94  /  56.29   
+*/
+
+:root {
+    --dark-gray-color: #343a40;
+    --meduim-gray-color: #495057;
+    --light-gray-color: #868e96;
+    --green-primary-color: #087f5b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------ */
+
+
+/* GENERAL STYLES */
+
+
+/* ------------------------ */
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--dark-gray-color);
+}
+
+.accordionWrapper {
+    width: 700px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 25px rgba(52, 58, 64, 0.06);
+}
+
+.accordion .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 32px;
+    cursor: pointer;
+}
+
+.header span {
+    color: var(--light-gray-color);
+    font-size: 18.4px;
+    font-weight: 500;
+}
+
+.header p {
+    color: var(--dark-gray-color);
+    font-size: 21.16px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.header i {
+    font-size: 21.16px;
+    font-weight: 500;
+    color: var(--green-primary-color);
+    cursor: pointer;
+}
+
+.information {
+    display: flex;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 64px 0;
+    transition: 0.4s ease-in-out;
+    transition-property: height, opacity, padding-top, padding-bottom;
+}
+
+.openAccordion {
+    height: auto;
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.information>p {
+    font-size: 16px;
+    color: var(--meduim-gray-color);
+    font-weight: 500;
+}
+
+.information>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 18px;
+    font-size: 12.1px;
+    color: var(--light-gray-color);
+}
