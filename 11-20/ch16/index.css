@@ -1,0 +1,54 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 / 160 / 192 / 256 / 320 / 384
+
+FONT SIZE SYSTEM (px)
+9.15   /  10.52  /  12.10  /  13.91  /  16  /  18.4   /  21.16  /  24.33  /  27.98  /  32.18  /  37.01  /  42.56  /  48.94  /  56.29   
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black-color: #222;
+    --white-color: #fffeff;
+}
+
+
+/* ------------------------ */
+
+
+/* GENERAL STYLES */
+
+
+/* ------------------------ */
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 875px;
+    height: 500px;
+    border: 1px solid var(--white-color);
+    background-color: var(--black-color);
+    overflow: hidden;
+}
+
+.container div {
+    width: 35px;
+    height: 100%;
+    background-color: #fffeff;
+    animation-fill-mode: both;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+}

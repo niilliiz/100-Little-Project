@@ -66,16 +66,3 @@ menu.addEventListener("click", () => {
         });
     }
 });
-
-/********************BTN SIX**************************** */
-
-
-let a = 1000100001010101000101
-
-let b = 1
-
-if (a & b) {
-    console.log("fard");
-} else {
-    console.log("zoj");
-}
