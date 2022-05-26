@@ -77,6 +77,6 @@ body {
     background-color: #153a5b;
 }
 
-.btn:hover .link {
+.btn:hover {
     color: #fff;
 }
