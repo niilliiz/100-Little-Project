@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Voyage Slider</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="carousel">
+            <div class="card inactive pRotate">
+                <img class="card--img" src="./img/p1.jpeg" alt="">
+                <div class="card--detail">
+                    <h3>HIGHLANDS</h3>
+                    <span class="subTitle">SCOTLAND</span>
+                    <span class="description">The mountains are calling</span>
+                </div>
+            </div>
+            <div class="card active">
+                <img class="card--img" src="./img/p2.jpeg" alt="">
+                <div class="card--detail">
+
+
+                    <h3>MACHU PICHU</h3>
+                    <span class="subTitle">PERU</span>
+                    <span class="description">Adventure is never far away</span>
+                </div>
+            </div>
+            <div class="card inactive nRotate">
+                <img class="card--img" src="./img/p3.jpeg" alt="">
+                <div class="card--detail">
+                    <h3>Chamonix</h3>
+                    <span class="subTitle">FRANCE</span>
+                    <span class="description">Let your dreams come true</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bgWrapper">
+            <img class="bg prev" src='./img/p1.jpeg' alt="">
+            <img class="bg current" src='./img/p2.jpeg' alt="">
+            <img class="bg next" src='./img/p3.jpeg' alt="">
+        </div>
+
+
+        <i class="fa fa-angle-left  carousel--arrow carousel--arrow__leftArrow"></i>
+        <i class="fa fa-angle-right  carousel--arrow carousel--arrow__rightArrow"></i>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
