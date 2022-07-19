@@ -1,0 +1,134 @@
+/*
+bgc: #E56262
+*/
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #e56262;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.circle-big {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  transform: scale(0);
+  animation: bigCircleMotion 6s ease-in-out infinite both;
+}
+
+.circle-medium {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  transform: scale(0);
+  animation: mediumCircleMotion 6s ease-in-out infinite both;
+}
+
+.circle-small {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform: scale(0);
+  animation: smallCircleMotion 6s ease-in-out infinite both;
+}
+
+@keyframes bigCircleMotion {
+  0% {
+    transform: scale(0);
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
+  }
+  34% {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+}
+
+@keyframes mediumCircleMotion {
+  0% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  10% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  34% {
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  90% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+}
+
+@keyframes smallCircleMotion {
+  0% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  15% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  40% {
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  80% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+  }
+}
+/*# sourceMappingURL=index.css.map */
