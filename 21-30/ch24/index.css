@@ -112,6 +112,7 @@ main {
 }
 
 button {
+    cursor: pointer;
     border: none;
     font: inherit;
     color: #83ba43;
