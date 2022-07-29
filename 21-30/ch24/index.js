@@ -42,7 +42,6 @@ async function getData() {
     active.classList.add("active");
 
     thumbnail.src = results.picture.thumbnail;
-    console.log(results);
 
     for (let i in CONTENT) {
         if (i === "name") {
