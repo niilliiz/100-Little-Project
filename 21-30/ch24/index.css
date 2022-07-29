@@ -1,0 +1,131 @@
+* {
+    font-family: "Josefin Sans", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #333;
+}
+
+.container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 600px;
+    padding-bottom: 20px;
+}
+
+header {
+    align-self: stretch;
+    border-bottom: 1px solid #83ba43;
+    height: 100px;
+    position: relative;
+}
+
+.imgWrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border-bottom: 3px solid #83ba43;
+    border-top: 3px solid #83ba43;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.greetingWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.title {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.info {
+    font-size: 32px;
+    color: #333;
+}
+
+.icons {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    transform: scale(1);
+    transition: color 0.3s ease-in-out;
+    transition-property: color, transform;
+}
+
+.icon:hover {
+    color: #83ba43;
+    transform: scale(1.2);
+}
+
+.active {
+    color: #83ba43;
+    transform: scale(1.2);
+}
+
+button {
+    border: none;
+    font: inherit;
+    color: #83ba43;
+    font-weight: bold;
+    border: 2px solid #83ba43;
+    font-size: 18px;
+    background-color: #fff;
+    padding: 12px 22px;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    transition-property: background-color, color;
+}
+
+button:hover {
+    background-color: #83ba43;
+    color: white;
+}
