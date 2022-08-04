@@ -75,7 +75,7 @@ function elementGenerator(content, isCompleted) {
   deleteIcon.classList.add("deleteIcon");
 
   li.classList.add("task");
-  isCompleted ? li.classList.add("completed") : null;
+  isCompleted ? li.classList.add("completedTask") : null;
 
   li.append(label);
   li.append(span);
@@ -108,8 +108,10 @@ const all = document.querySelector(".all");
 const active = document.querySelector(".active");
 const completed = document.querySelector(".completed");
 
+console.dir(completed);
+
 all.addEventListener("click", () => {
-  all.classList.toggle("current");
+  all.classList.add("current");
   active.classList.remove("current");
   completed.classList.remove("current");
   listGenerator(tasks, null);
@@ -122,6 +124,7 @@ active.addEventListener("click", () => {
 });
 
 completed.addEventListener("click", () => {
+  console.log("kkk");
   listGenerator(tasks, 1);
   completed.classList.add("current");
   active.classList.remove("current");
