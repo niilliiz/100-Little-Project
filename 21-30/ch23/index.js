@@ -122,10 +122,10 @@ active.addEventListener("click", () => {
 });
 
 completed.addEventListener("click", () => {
-  completed.classList.toggle("current");
+  listGenerator(tasks, 1);
+  completed.classList.add("current");
   active.classList.remove("current");
   all.classList.remove("current");
-  listGenerator(tasks, 1);
 });
 
 /*-----------------------CLEAR TASKS--------- */
@@ -138,9 +138,10 @@ clear.addEventListener("click", () => {
 });
 
 /*-------------------REMAINED TASKS-----------*/
-const left = document.querySelector(".left");
 
 function setLeftTasksNumber(array) {
+  const left = document.querySelector(".left");
+
   const length =
     array.length > 0 ? array.filter((item) => item.status !== 1).length : 0;
   left.innerHTML = length ? `${length} tasks left` : "list is empty";
