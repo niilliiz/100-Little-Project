@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>Interactive Comment Section</title>
+</head>
+
+<body>
+  <section class="container">
+    <div class="comment_wrapper">
+      <div class="comment">
+        <div class="flex info">
+          <img class="avatar" src="./images/avatars/image-amyrobson.png" alt="amyrobson">
+          <h1 class="name">amyrobson</h1>
+          <div class="primary-bg lable">you</div>
+          <div class="time">1 month ago</div>
+        </div>
+        <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit adipisci quod culpa
+          voluptatum odit beatae blanditiis libero doloribus illum quasi!</p>
+        <div class="split rate">
+          <button class="button agree">
+            <img src="./images/icon-plus.svg" alt="plus icon">
+          </button>
+          <span class="primary-clr">12</span>
+          <button class="button disagree">
+            <img src="./images/icon-minus.svg" alt="minus icon">
+          </button>
+        </div>
+        <div class="reply flex">
+          <img src="./images/icon-reply.svg" alt="reply icon">
+          <span class="primary-clr">Reply</span>
+        </div>
+      </div>
+      <div class="replies_wrapper">
+        <div class="bar"></div>
+        <!------------- REPLIES-------------- -->
+        <div class="replies">
+          <!-- ------------REPLY #1------------ -->
+          <div class="comment">
+            <div class="flex info">
+              <img class="avatar" src="./images/avatars/image-juliusomo.png" alt="amyrobson">
+              <h1 class="name">juliusomo</h1>
+              <div class="time">1 week ago</div>
+            </div>
+            <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit adipisci quod clibero
+              doloribus illum quasi!</p>
+            <div class="split rate">
+              <button class="button agree">
+                <img src="./images/icon-plus.svg" alt="plus icon">
+              </button>
+              <span class="primary-clr">0</span>
+              <button class="button disagree">
+                <img src="./images/icon-minus.svg" alt="minus icon">
+              </button>
+            </div>
+            <div class="reply flex">
+              <img src="./images/icon-reply.svg" alt="reply icon">
+              <span class="primary-clr">Reply</span>
+            </div>
+          </div>
+          <!-- ------------REPLY #2------------ -->
+          <div class="comment">
+            <div class="flex info">
+              <img class="avatar" src="./images/avatars/image-ramsesmiron.png" alt="amyrobson">
+              <h1 class="name">ramsesmiron</h1>
+              <div class="time">2 weeks ago</div>
+            </div>
+            <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit adipisci quod culpa
+              voluptatum odidolor sit amet consectetur adipisicing elit. Velit adipisci quod culpa
+              voluptatum odit beatae blanditiis libero doloribus illum quasi!</p>
+            <div class="split rate">
+              <button class="button agree">
+                <img src="./images/icon-plus.svg" alt="plus icon">
+              </button>
+              <span class="primary-clr">2</span>
+              <button class="button disagree">
+                <img src="./images/icon-minus.svg" alt="minus icon">
+              </button>
+            </div>
+            <div class="reply flex">
+              <img src="./images/icon-reply.svg" alt="reply icon">
+              <span class="primary-clr">Reply</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- --------------------------------------------------- -->
+    <div class="comment_wrapper">
+      <div class="comment">
+        <div class="flex info">
+          <img class="avatar" src="./images/avatars/image-maxblagun.png" alt="maxblagun">
+          <h1 class="name">maxblagun</h1>
+          <div class="time">2 weeks ago</div>
+        </div>
+        <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit adipisci quod culpa
+          voluptatum odit beatae blanditiis libero doloribus illum quasi! Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Deleniti, tempora!</p>
+        <div class="split rate">
+          <button class="button agree">
+            <img src="./images/icon-plus.svg" alt="plus icon">
+          </button>
+          <span class="primary-clr">5</span>
+          <button class="button disagree">
+            <img src="./images/icon-minus.svg" alt="minus icon">
+          </button>
+        </div>
+        <div class="reply flex">
+          <img src="./images/icon-reply.svg" alt="reply icon">
+          <span class="primary-clr">Reply</span>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------- -->
+    <div class="input_wrapper">
+      <input type="text" placeholder="Add a comment">
+      <img src="./images/avatars/image-amyrobson.png" alt="Default user avatar">
+      <button class="primary-bg">
+        SEND
+      </button>
+    </div>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
