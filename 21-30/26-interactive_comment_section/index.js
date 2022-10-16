@@ -1,85 +1,85 @@
-const users = [
+import { GenerateElement } from "./generate_element.js";
+import { GenerateComment } from "./generate_comment.js";
+
+const comments = [
   {
-    id: "amyrobson",
-    info: { avatar: "./images/avatars/image-amyrobson.png" },
-    comments: [
-      {
-        time: "last week",
-        rate: 5,
-        comment:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quidem quaerat voluptatum similique provident porro libero, eveniet quae explicabo cum dolores ab incidunt iste nemo!",
-        replies: [
-          {
-            id: "juliusomo",
-            comments:
-              "oluptatum similique provident porrolibero, eveniet quae explicabo cum dolor..",
-            rate: "0",
-            time: "last week",
-          },
-        ],
+    id: 0,
+    content:
+      "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+    createdAt: "1 month ago",
+    score: 12,
+    user: {
+      image: {
+        png: "./images/avatars/image-amyrobson.png",
       },
-    ],
+      username: "amyrobson",
+      isCurrent: true,
+    },
+    isReplied: false,
+    replies: [],
   },
   {
-    id: "juliusomo",
-    info: { avatar: "./images/avatars/image-juliusomo.png" },
-    comments: [
+    id: 1,
+    content:
+      "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+    createdAt: "2 weeks ago",
+    score: 5,
+    user: {
+      image: {
+        png: "./images/avatars/image-maxblagun.png",
+      },
+      username: "maxblagun",
+      isCurrent: false,
+    },
+    isReplied: false,
+    replies: [
       {
-        time: "2 weeks ago",
-        rate: 12,
-        comment:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quidem quaerat voluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sit.",
+        id: 2,
+        content:
+          "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+        createdAt: "1 week ago",
+        score: 4,
+        replyingTo: "maxblagun",
+        user: {
+          image: {
+            png: "./images/avatars/image-ramsesmiron.png",
+          },
+          username: "ramsesmiron",
+        },
+        isReplied: true,
+        replies: [],
+      },
+      {
+        id: 3,
+        content:
+          "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
+        createdAt: "2 days ago",
+        score: 2,
+        replyingTo: "maxblagun",
+        user: {
+          image: {
+            png: "./images/avatars/image-juliusomo.png",
+          },
+          username: "juliusomo",
+        },
+        isReplied: true,
         replies: [],
       },
     ],
   },
-  {
-    id: "maxblagun",
-    info: { avatar: "./images/avatars/image-maxblagun.png" },
-    comments: [
-      {
-        time: "1 hour ago",
-        rate: 3,
-        comment:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quidem quaerat voluptatum simipsum dolor sit amet consectetur adipisicing elit. Nam quidem quaerat voluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sit.",
-        replies: [
-          {
-            id: "ramsesmiron",
-            comments:
-              "oluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sit.",
-            rate: "1",
-            time: "8 minutes ago",
-          },
-          {
-            id: "juliusomo",
-            comments:
-              "oluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sitoluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sit.",
-            rate: "10",
-            time: "1 minute ago",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "ramsesmiron",
-    info: { avatar: "./images/avatars/image-ramsesmiron.png" },
-    comments: [
-      {
-        time: "last year",
-        rate: 0,
-        comment:
-          "et consectetur adipisicing elit. Nam quidem quaerat voluptatum similique provident porro",
-        replies: [
-          {
-            id: "maxblagun",
-            comments:
-              "oluptatum similique provident porrolibero, eveniet quae explicabo cum dolores ab incidunt iste nemo! Lorem ipsum dolor sit.",
-            rate: "10",
-            time: "8 months ago",
-          },
-        ],
-      },
-    ],
-  },
 ];
+
+document.addEventListener("DOMContentLoaded", () => {
+  createCommentElement().forEach((comment) =>
+    appendCommentToCommentContainer(comment)
+  );
+});
+
+function createCommentElement(element) {
+  return comments.map((comment) => GenerateComment(comment));
+}
+
+function appendCommentToCommentContainer(comment) {
+  const commentContainer = document.querySelector(".comment_container");
+  commentContainer.append(comment);
+}
