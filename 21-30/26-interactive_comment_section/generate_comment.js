@@ -3,13 +3,6 @@ import {
   AppendChildrenToElement,
 } from "./generate_element.js";
 
-// const replies = GenerateElement("div", ["replies"], ...[, , ,]);
-// const bar = GenerateElement("div", ["bar"], ...[, , ,]);
-// const repliesWrapper = GenerateElement("div", ["replies_wrapper"], ...[,], [
-//   bar,
-//   replies,
-// ]);
-
 export function GenerateComment(data) {
   console.log(data);
   // IMAGES

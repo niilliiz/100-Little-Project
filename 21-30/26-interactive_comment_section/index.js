@@ -70,13 +70,17 @@ const comments = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  createCommentElement().forEach((comment) =>
-    appendCommentToCommentContainer(comment)
-  );
+  generateComment(comments);
 });
 
-function createCommentElement(element) {
-  return comments.map((comment) => GenerateComment(comment));
+function generateComment(cmnts) {
+  createCommentElement(cmnts).forEach((comment) =>
+    appendCommentToCommentContainer(comment)
+  );
+}
+
+function createCommentElement(cmnts) {
+  return cmnts.map((comment) => GenerateComment(comment));
 }
 
 function appendCommentToCommentContainer(comment) {
