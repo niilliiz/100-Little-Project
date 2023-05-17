@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+.header {
+  color: #3e3e3e;
+  margin: 25px;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 35px;
+  display: block;
+  border: 2px solid #ee7470;
+  border-radius: 3px;
+  width: 80px;
+  margin: 5px;
+}
+
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 30px 20px;
+  justify-items: start;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s ease-in-out;
+}
+
+.btn {
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  width: 140px;
+  height: 65px;
+  font-weight: bolder;
+  color: #153a5b;
+  background-color: #fff;
+  border: 2px solid #153a5b;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+/**----------------------For All CHs------------**/
+
+.challenge {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 5px;
+  color: #153a5b;
+  font-weight: lighter;
+}
+
+/**-----------CH ONE--------------------------**/
+
+.btn:hover {
+  background-color: #153a5b;
+}
+
+.btn:hover {
+  color: #fff;
+}
