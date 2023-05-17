@@ -1,82 +1,80 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Spartan", sans-serif;
-    font-weight: 400;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 400;
+  color: #333;
 }
 
 .header {
-    color: #3e3e3e;
-    margin: 25px;
+  color: #3e3e3e;
+  margin: 25px;
 }
 
 .header::after {
-    content: "";
-    border: 2px solid #ee7470;
-    display: block;
-    width: 150px;
-    margin: 5px;
-    position: absolute;
-    transform: translateX(50%);
+  content: '';
+  border: 2px solid #ee7470;
+  display: block;
+  width: 150px;
+  margin: 5px;
+  position: absolute;
+  transform: translateX(50%);
 }
 
 .main {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 30px 20px;
-    justify-items: start;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px #ccc;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 30px 20px;
+  justify-items: start;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .link {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.5s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s ease-in-out;
 }
 
 .btn {
-    border-radius: 4px;
-    font-family: inherit;
-    cursor: pointer;
-    width: 140px;
-    height: 65px;
-    font-weight: bolder;
-    color: #153a5b;
-    background-color: #fff;
-    border: 2px solid #153a5b;
-    font-size: 13px;
-    transition: background-color 0.5s ease-in-out;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  width: 140px;
+  height: 65px;
+  font-weight: bolder;
+  color: #153a5b;
+  background-color: #fff;
+  border: 2px solid #153a5b;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in-out;
 }
-
 
 /**----------------------For All CHs------------**/
 
 .challenge {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  border-radius: 3px;
 }
 
 .title {
-    text-align: center;
-    margin-bottom: 5px;
-    color: #153a5b;
-    font-weight: lighter;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #153a5b;
+  font-weight: lighter;
 }
-
 
 /**-----------CH ONE--------------------------**/
 
 .btn:hover {
-    background-color: #153a5b;
+  background-color: #153a5b;
 }
 
 .btn:hover {
-    color: #fff;
+  color: #fff;
 }
