@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   font-weight: 400;
   color: #333;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 .header::after {
-  content: '';
+  content: "";
   border: 2px solid #ee7470;
   display: block;
   width: 150px;
@@ -67,6 +67,10 @@ body {
   margin-bottom: 5px;
   color: #153a5b;
   font-weight: lighter;
+}
+
+.hide {
+  display: none;
 }
 
 /**-----------CH ONE--------------------------**/
