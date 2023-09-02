@@ -1,0 +1,103 @@
+@import url(../../reset_style.css);
+
+html {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: var(--clr-neutral-200);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: 3rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gap__small {
+  gap: 1rem;
+}
+
+.content_box {
+  border-radius: 8px;
+  min-width: 450px;
+  min-height: 350px;
+  border: 3px solid #aaa;
+  background-color: #555;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.button {
+  color: #333;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  background-color: #aaa;
+}
+
+/* ------------INPUT CONTAINER------- */
+
+.input_container {
+  align-self: flex-start;
+}
+
+.fileContent {
+}
+
+.uploadFileButton {
+}
+
+.pathInput {
+  flex-grow: 1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.pathButton {
+}
+
+/* ------------CONVERTOR CONTAINER------- */
+.convertor_container {
+  align-self: center;
+}
+.toCSVButton {
+}
+.toJSONButton {
+}
+
+/* ------------RESULT CONTAINER------- */
+
+.result_container {
+  align-self: flex-start;
+}
+.resultContentP {
+}
+.handlers_contaier {
+}
+
+.handlers_contaier > .button {
+  flex-grow: 1;
+}
+.downloadButton {
+}
+.clearButton {
+}
+.copyButton {
+}
