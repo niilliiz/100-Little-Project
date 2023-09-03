@@ -1,4 +1,5 @@
-export function handleValidatingContent(array, cols, rows) {
+// check if the content is a valid csv
+export function handleValidatingCSV(array, cols, rows) {
   const isNotEmpty = handleValidateEmptyItem(array);
   const validCols = handleValidateEmptyItem(cols.split(","));
   const validRows = handleValidateRows(cols.split(",").length, rows);

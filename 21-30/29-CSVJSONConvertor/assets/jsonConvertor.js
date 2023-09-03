@@ -1,10 +1,10 @@
-import { handleValidatingContent } from "./validator";
+import { handleValidatingCSV } from "./validator";
 
 export function handleConvertToJSON() {
   let separatedContent = content.split("\n");
   const [cols, ...rows] = separatedContent;
 
-  const isValid = handleValidatingContent(separatedContent, cols, rows);
+  const isValid = handleValidatingCSV(separatedContent, cols, rows);
 
   if (isValid) {
     const array = handleGenerateArray(cols, rows);
