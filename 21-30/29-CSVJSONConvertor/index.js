@@ -1,10 +1,24 @@
-import { handleConvertToJSON } from "./assets/jsonConvertor";
+import handleConvertToJSON from "./assets/jsonConvertor.js";
+import handleConvertToCSV from "./assets/csvConvertor.js";
 
 const inputContent = document.querySelector(".fileContent");
 const toJSONButton = document.querySelector(".toJSONButton");
+const toCSVButton = document.querySelector(".toCSVButton");
 const resultContent = document.querySelector(".resultContent");
 
-toJSONButton.addEventListener("click", handleConvertToJSON);
+let content = "";
+
+toJSONButton.addEventListener("click", () => {
+  if (content) {
+    handleConvertToJSON(content);
+  }
+});
+toCSVButton.addEventListener("click", () => {
+  if (content) {
+    handleConvertToCSV(content);
+  }
+});
+
 inputContent.addEventListener("change", handleInputContentChange);
 
 function handleInputContentChange(e) {

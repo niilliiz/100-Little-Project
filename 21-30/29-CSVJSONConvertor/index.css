@@ -42,6 +42,7 @@ body {
   background-color: #555;
   outline: none;
   padding: 0.5rem;
+  white-space: pre-line;
 }
 
 .button {

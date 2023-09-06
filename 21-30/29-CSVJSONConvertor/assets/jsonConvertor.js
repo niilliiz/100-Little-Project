@@ -1,6 +1,8 @@
-import { handleValidatingCSV } from "./validator";
+import { handleValidatingCSV } from "./validator.js";
 
-export function handleConvertToJSON() {
+const resultContent = document.querySelector(".resultContent");
+
+export default function handleConvertToJSON(content) {
   let separatedContent = content.split("\n");
   const [cols, ...rows] = separatedContent;
 
@@ -8,7 +10,6 @@ export function handleConvertToJSON() {
 
   if (isValid) {
     const array = handleGenerateArray(cols, rows);
-    console.table(JSON.stringify(array));
     resultContent.textContent = JSON.stringify(array);
   } else {
   }

@@ -26,3 +26,14 @@ function handleValidateEmptyItem(array) {
 function handleValidateRows(length, array) {
   return array.every((item) => item.split(",").length === length);
 }
+
+// check if the content is a valid JSON
+export function handleCheckJSONValidity(json) {
+  try {
+    JSON.parse(json);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+}
