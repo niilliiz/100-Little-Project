@@ -1,18 +1,18 @@
-const input = document.querySelector('.input');
-const button = document.querySelector('.button');
-const helperText = document.querySelector('.helperText');
+const input = document.querySelector(".input");
+const button = document.querySelector(".button");
+const helperText = document.querySelector(".helperText");
 
 console.dir(input);
 console.dir(button);
 
-button.addEventListener('click', handleConvert);
+button.addEventListener("click", handleConvert);
 
-input.addEventListener('change', (e) => handleChangInput(e));
+input.addEventListener("change", (e) => handleChangInput(e));
 
-let value = '';
+let value = "";
 
 function handleChangInput(e) {
-  handleHelperText('clear');
+  handleHelperText("clear");
 
   const { value: inputValue } = e.target;
   value = inputValue;
@@ -29,9 +29,7 @@ function handleConvert() {
       return acc;
     }, 0);
 
-    handleHelperText('create', `Decimal Number is ${result} :))`, 'success');
-
-    console.log(result);
+    handleHelperText("create", `Decimal Number is ${result} :))`, "success");
   }
 }
 
@@ -40,8 +38,8 @@ function handleValidateField(value) {
   let mustBeBinaryDigit = value.match(binaryDigitRegex) || [];
 
   if (mustBeBinaryDigit.length === 0) {
-    input.value = '';
-    handleHelperText('create');
+    input.value = "";
+    handleHelperText("create");
     return false;
   }
 
@@ -49,7 +47,7 @@ function handleValidateField(value) {
   let mustBeUpTo8Digit = value.match(limittingRegex) || [];
 
   if (mustBeUpTo8Digit.length === 0) {
-    handleHelperText('create', 'Must be up to 8 digit!');
+    handleHelperText("create", "Must be up to 8 digit!");
     return false;
   }
 
@@ -57,8 +55,8 @@ function handleValidateField(value) {
   let mustBeginWitth1 = value.match(beginningDigit) || [];
 
   if (mustBeginWitth1.length === 0) {
-    handleHelperText('create', 'Must begins with 1!');
-    input.value = '';
+    handleHelperText("create", "Must begins with 1!");
+    input.value = "";
     return false;
   }
 
@@ -66,21 +64,21 @@ function handleValidateField(value) {
 }
 
 function handleHelperText(
-  type = '',
-  text = 'Only 0 or 1 are allowed!',
-  status = 'warning'
+  type = "",
+  text = "Only 0 or 1 are allowed!",
+  status = "warning"
 ) {
-  helperText.textContent = '';
+  helperText.textContent = "";
 
-  if (type === 'create') {
+  if (type === "create") {
     helperText.textContent = text;
   }
 
-  if (status === 'success') {
-    helperText.classList.add('success');
-    helperText.classList.remove('warning');
-  } else if (status === 'warning') {
-    helperText.classList.remove('success');
-    helperText.classList.add('warning');
+  if (status === "success") {
+    helperText.classList.add("success");
+    helperText.classList.remove("warning");
+  } else if (status === "warning") {
+    helperText.classList.remove("success");
+    helperText.classList.add("warning");
   }
 }

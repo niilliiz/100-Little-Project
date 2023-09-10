@@ -29,8 +29,6 @@ function handleGenerateCSV(json) {
     content = content.concat(item, separator);
   });
 
-  console.log(content);
-
   resultContent.textContent = content;
 }
 

@@ -4,7 +4,6 @@ import {
 } from "./generate_element.js";
 
 export function GenerateComment(data) {
-  console.log(data);
   // IMAGES
   const replyImg = GenerateElement("img", ...[, , ,], [
     { attr: "src", value: "./images/icon-reply.svg" },

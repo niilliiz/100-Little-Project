@@ -124,7 +124,6 @@ active.addEventListener("click", () => {
 });
 
 completed.addEventListener("click", () => {
-  console.log("kkk");
   listGenerator(tasks, 1);
   completed.classList.add("current");
   active.classList.remove("current");
