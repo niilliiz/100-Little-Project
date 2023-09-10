@@ -6,6 +6,8 @@ const toJSONButton = document.querySelector(".toJSONButton");
 const toCSVButton = document.querySelector(".toCSVButton");
 const downloadButton = document.querySelector(".downloadButton");
 const uploadFileInput = document.querySelector(".uploadFileInput");
+const resultContent = document.querySelector(".resultContent");
+const clearButton = document.querySelector(".clearButton");
 
 let content = "";
 
@@ -28,14 +30,14 @@ downloadButton.addEventListener("click", () => {
 function handleDownloadFile() {}
 
 uploadFileInput.addEventListener("change", (e) => {
-  handleInputContentChange("");
+  handleContentChange("");
   const file = e.target.files[0];
   const reader = new FileReader();
 
   reader.addEventListener(
     "load",
     () => {
-      handleInputContentChange(reader.result);
+      handleContentChange(reader.result);
       inputContent.value = reader.result;
     },
     false
@@ -47,11 +49,19 @@ uploadFileInput.addEventListener("change", (e) => {
 });
 
 inputContent.addEventListener("change", (e) =>
-  handleInputContentChange(e.target.value)
+  handleContentChange(e.target.value)
 );
 
-function handleInputContentChange(value) {
+clearButton.addEventListener("click", handleReset);
+
+function handleContentChange(value) {
   content = value;
+}
+
+function handleReset() {
+  resultContent.textContent = "";
+  inputContent.value = "";
+  handleContentChange("");
 }
 
 // https://jsonlint.com/
