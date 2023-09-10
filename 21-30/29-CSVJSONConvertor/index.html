@@ -20,8 +20,10 @@
   <div class="row">
     <section class="col input_container">
       <textarea name="content" cols="30" rows="10" class="fileContent content_box"></textarea>
-      <input type="file" " class=" uploadFileInput" hidden />
-      <button class="uploadFileButton button">Or upload file</button>
+      <label for="uploadFile" class="label">
+        <input type="file" id="uploadFile" class="uploadFileInput" hidden />
+        <span class="upload">Or upload file</span>
+      </label>
       <div class="row gap__small">
         <input class="pathInput" type="text" name="path" placeholder="Please enter path to file">
         <button class="pathButton button">Or enter path to file</button>

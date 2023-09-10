@@ -36,16 +36,24 @@ body {
 
 .content_box {
   border-radius: 8px;
-  min-width: 450px;
+  width: 450px;
   min-height: 350px;
   border: 3px solid #aaa;
   background-color: #555;
   outline: none;
   padding: 0.5rem;
   white-space: pre-line;
+  overflow: auto;
 }
 
-.button {
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.button,
+.upload {
+  text-align: center;
   color: #333;
   padding: 0.5rem 0.8rem;
   border-radius: 4px;

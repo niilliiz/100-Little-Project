@@ -1,11 +1,9 @@
 import handleConvertToJSON from "./assets/jsonConvertor.js";
 import handleConvertToCSV from "./assets/csvConvertor.js";
-import { handleUploadFile, handleDownloadFile } from "./assets/fileHandlers.js";
 
 const inputContent = document.querySelector(".fileContent");
 const toJSONButton = document.querySelector(".toJSONButton");
 const toCSVButton = document.querySelector(".toCSVButton");
-const uploadButton = document.querySelector(".uploadFileButton");
 const downloadButton = document.querySelector(".downloadButton");
 const uploadFileInput = document.querySelector(".uploadFileInput");
 
@@ -23,42 +21,37 @@ toCSVButton.addEventListener("click", () => {
   }
 });
 
-uploadButton.addEventListener("click", () => {
-  uploadFileInput.click();
-});
-
 downloadButton.addEventListener("click", () => {
   handleDownloadFile();
 });
 
 function handleDownloadFile() {}
 
-const reader = new FileReader();
-
-reader.addEventListener(
-  "load",
-  () => {
-    content = reader.result;
-    inputContent.value = reader.result;
-  },
-  false
-);
-
-uploadFileInput.addEventListener("click", (e) => {
+uploadFileInput.addEventListener("change", (e) => {
+  handleInputContentChange("");
   const file = e.target.files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener(
+    "load",
+    () => {
+      handleInputContentChange(reader.result);
+      inputContent.value = reader.result;
+    },
+    false
+  );
 
   if (file) {
     reader.readAsText(file);
   }
 });
 
-// console.dir(inputContent);
+inputContent.addEventListener("change", (e) =>
+  handleInputContentChange(e.target.value)
+);
 
-inputContent.addEventListener("change", handleInputContentChange);
-
-function handleInputContentChange(e) {
-  console.log("change", e.target.value);
-  // content = e.target.value;
+function handleInputContentChange(value) {
+  content = value;
 }
 
 // https://jsonlint.com/
