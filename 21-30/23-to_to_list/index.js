@@ -108,8 +108,6 @@ const all = document.querySelector(".all");
 const active = document.querySelector(".active");
 const completed = document.querySelector(".completed");
 
-console.dir(completed);
-
 all.addEventListener("click", () => {
   all.classList.add("current");
   active.classList.remove("current");

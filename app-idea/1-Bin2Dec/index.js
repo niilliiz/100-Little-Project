@@ -2,9 +2,6 @@ const input = document.querySelector(".input");
 const button = document.querySelector(".button");
 const helperText = document.querySelector(".helperText");
 
-console.dir(input);
-console.dir(button);
-
 button.addEventListener("click", handleConvert);
 
 input.addEventListener("change", (e) => handleChangInput(e));

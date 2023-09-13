@@ -8,25 +8,24 @@ const countText = document.getElementsByClassName("count")[0];
 let count = 27;
 
 countText.textContent = `${count}`;
-console.dir(star.classList);
 
 btn4.addEventListener("click", flyingStar);
 
 function flyingStar() {
-    // star.classList.remove("hoverStar");
-    span.style.color = "#ffd700";
-    star.classList.add("flyingStar");
+  // star.classList.remove("hoverStar");
+  span.style.color = "#ffd700";
+  star.classList.add("flyingStar");
 }
 
 btn4.addEventListener("click", addCount);
 
 function addCount() {
-    setTimeout(() => {
-        count++;
+  setTimeout(() => {
+    count++;
 
-        countText.textContent = count;
-        countText.style.color = "#ffd700";
-    }, 600);
-    btn4.removeEventListener("click", addCount);
-    btn4.removeEventListener("click", flyingStar);
+    countText.textContent = count;
+    countText.style.color = "#ffd700";
+  }, 600);
+  btn4.removeEventListener("click", addCount);
+  btn4.removeEventListener("click", flyingStar);
 }
