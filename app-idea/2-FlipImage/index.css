@@ -23,7 +23,7 @@ h2 {
   overflow-x: auto;
 }
 
-.image_card {
+.image_button {
   min-width: 130px;
   width: 130px;
   height: 150px;
@@ -39,7 +39,7 @@ h2 {
   cursor: pointer;
 }
 
-.image_card > img {
+.image_button > img {
   display: block;
   width: 100%;
   height: 125px;
@@ -47,7 +47,7 @@ h2 {
   object-position: center;
 }
 
-.image_card > h4 {
+.image_button > h4 {
   padding: 0;
   margin: 0;
   font-size: 13px;
