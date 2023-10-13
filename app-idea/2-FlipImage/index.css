@@ -90,6 +90,9 @@ h2 {
   height: 400px;
   border-radius: 4px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .showcase_image {
