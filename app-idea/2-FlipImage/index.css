@@ -39,12 +39,12 @@ h2 {
   cursor: pointer;
 }
 
-.image_button > img {
+.image_button > .backgroundImage {
   display: block;
   width: 100%;
   height: 125px;
-  object-fit: cover;
-  object-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .image_button > h4 {
@@ -99,6 +99,62 @@ h2 {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ----------------IMAGE TYPES------------ */
+
+.none,
+#none {
+  background-image: url(./asset/burger.jpg);
+}
+
+#pencil,
+.pencil {
+  background-repeat: no-repeat;
+  background-image: url("./asset/burger.jpg"), url("./asset/burger.jpg");
+  background-blend-mode: difference;
+  filter: brightness(2) invert(1) grayscale(1);
+  box-shadow: inset 0 0 0 1px black;
+  background-position: calc(50% - 1px) calc(50% - 1px),
+    calc(50% + 1px) calc(50% + 1px);
+}
+#waterColor {
+}
+#emboss {
+}
+#coloredPencil {
+}
+#chalkboard {
+}
+#coloredChalkboard {
+}
+#airbrush {
+}
+#hallucination {
+}
+#flanned {
+}
+#lowInkHor {
+}
+#lowInkVer {
+}
+#collage {
+}
+#mosaic {
+}
+#photoBorder {
+}
+#infrared {
+}
+#nightVersion {
+}
+#warhol {
+}
+#selectiveColor {
+}
+#mirrorHor {
+}
+#mirrorVer {
 }
