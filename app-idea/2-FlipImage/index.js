@@ -11,6 +11,6 @@ imageButton.forEach((button) =>
 function handleSelectImage() {
   const type = this.dataset.imagetype;
   title.textContent = type;
-  const classType = this.classList[1];
+  const classType = this.children[0].classList[1];
   showCaseImage.setAttribute("id", classType);
 }
