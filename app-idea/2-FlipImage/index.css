@@ -114,6 +114,8 @@ h2 {
 .none,
 #none {
   background-image: url(./asset/burger.jpg);
+  filter: blur(1px) hue-rotate(10deg);
+  box-shadow: inset 0 0 0 1px black;
 }
 
 #pencil,
@@ -125,6 +127,7 @@ h2 {
   background-position: calc(50% - 1px) calc(50% - 1px),
     calc(50% + 1px) calc(50% + 1px);
 }
+
 /* --------------------------------------------- */
 
 #waterColor,
